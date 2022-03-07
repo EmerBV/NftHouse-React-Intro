@@ -15,7 +15,7 @@
 
   <body>
 
-    <nav class="wrapper flex md:flex justify-between">
+    <nav class="navWrapper">
         <div class="logoContainer">
           <a href="index.html"><img src="./assets/nftHouse-logo-2.png" width="200" alt=""/></a>
         </div>
@@ -30,7 +30,7 @@
           <li><a href="collections.html" class="headerItem">Collections</a></li>
           <li><a href="" class="headerItem">Stats</a></li>
           <li><a href="" class="headerItem">Resources</a></li>
-          <li><a href="" class="headerItem">Create</a></li>
+          <li><a href="createNft.html" class="headerItem">Create</a></li>
           <div class="headerIcon">
             <a href="myCollections.html"
               ><i class="far fa-user-circle" title="Account"></i
@@ -41,7 +41,7 @@
           </div>
         </ul>
   
-        <div class="hidden space-y-4 bg-[#04111d] px-3 py-2 left-0 top-[72px] z-[110] w-full absolute mobile-menu">
+        <div class="hidden responsiveNav mobile-menu">
           <div class="searchBar lg:hidden md:hidden flex flex-1">
               <div class="searchIcon">
                   <a href="#"><i class="fas fa-search"></i></a>
@@ -68,7 +68,7 @@
     </nav>
 
     <div class="h-screen overflow-hidden">
-      <div class="flex items-center justify-center container-lg text-[#e5e8eb] h-full">
+      <div class="detailWrapper">
         <div class="detailContainer" id="nftDetail">
           <div class="detailTopContent">
             <div class="detailImgContainer">
@@ -149,21 +149,21 @@
                 </div>
               </div>
               <div class="tableHeader">
-                <div class="tableHeaderElement flex-[3]">Event</div>
-                <div class="tableHeaderElement flex-[3]">Price</div>
-                <div class="tableHeaderElement flex-[3]">From</div>
-                <div class="tableHeaderElement flex-[3]">To</div>
-                <div class="tableHeaderElement flex-[3]">Date</div>
+                <div class="tableHeaderElement">Event</div>
+                <div class="tableHeaderElement">Price</div>
+                <div class="tableHeaderElement">From</div>
+                <div class="tableHeaderElement">To</div>
+                <div class="tableHeaderElement">Date</div>
               </div>
               <div class="">
                 <div class="eventItem">
-                  <div class="event flex-[3]">
+                  <div class="event">
                     <div class="eventIcon">
                       <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="eventName">Sale</div>
                   </div>
-                  <div class="eventPrice flex-[3]">
+                  <div class="eventPrice">
                     <img
                       src="./assets/eth2.svg"
                       alt="eth"

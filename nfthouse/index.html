@@ -15,9 +15,9 @@
 
 <body>
 
-    <div class="max-w-full max-h-full m-0 block justify-center items-center">
+    <div class="indexWrapper">
 
-        <nav class="wrapper flex md:flex justify-between">
+        <nav class="navWrapper">
             <div class="logoContainer">
               <a href="index.html"><img src="./assets/nftHouse-logo-2.png" width="200" alt=""/></a>
             </div>
@@ -43,7 +43,7 @@
               </div>
             </ul>
       
-            <div class="hidden space-y-4 bg-[#04111d] px-3 py-2 left-0 top-[72px] z-[110] w-full absolute mobile-menu">
+            <div class="hidden responsiveNav mobile-menu">
               <div class="searchBar lg:hidden md:hidden flex flex-1">
                   <div class="searchIcon">
                       <a href="#"><i class="fas fa-search"></i></a>
@@ -69,15 +69,15 @@
             </button>
         </nav>
         
-        <section class="relative container justify-center items-center max-w-full my-2">
-            <div class="heroWrapper max-w-full my-2">
+        <section class="heroContainer">
+            <div class="heroWrapper">
                 <div class="bgContainer max-w-full">
                     <div class="contentWrapper">
                         <div class="copyContainer">
                             <div class="title text-white text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-3 font-semibold">
                                 Discover, collect and sell extraordinary NFTs
                             </div>
-                            <div class="text-[#8a939b] text-lg text-center lg:text-left mb-6">
+                            <div class="heroDescription">
                                 NftHouse is the world's first and largest NFT marketplace.
                             </div>
                             <div class="ctaContainer">
@@ -85,13 +85,16 @@
                                 <button class="button"><a href="createNft.html" class="">Create</a></button>
                             </div>
                         </div>
-                        <div class="cardContainer hover:shadow-lg transform transition hover:-translate-y-2 mx-2">
+                        <div class="cardContainer">
                             <img class="rounded-t-lg h-full" src="./assets/card_Img.jpg" alt="">
                             <div class="infoContainer">
                                 <img class="h-[2.25rem] rounded-full" src="https://pbs.twimg.com/media/FI231MlaIAADj_q?format=jpg&name=small" alt="">
                                 <div class="author">
                                     <div class="name">AzukiZen</div>
                                     <a class="text-[#1868b7]" href="">Team Azuki</a>
+                                </div>
+                                <div class="infoIcon">
+                                    <i class="fas fa-info-circle"></i>
                                 </div>
                             </div>
                         </div>
