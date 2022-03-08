@@ -478,9 +478,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-2 {
   margin-left: 0.5rem;
 }
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1022,27 +1019,20 @@ a {
   justify-content: center;
 }
 
-@media (min-width: 640px) {
-
-  .copyContainer {
-    align-items: flex-start;
-  }
-}
-
-@media (min-width: 768px) {
-
-  .copyContainer {
-    align-items: center;
-  }
-}
-
 .title {
   position: relative;
+  margin-bottom: 0.75rem;
   display: flex;
-  font-size: 46px;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+
+  .title {
+    font-size: 46px;
+  }
 }
 
 .heroDescription {
@@ -1065,18 +1055,35 @@ a {
   display: flex;
 }
 
+@media (min-width: 768px) {
+
+  .ctaContainer {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .ctaContainer {
+    justify-content: flex-start;
+  }
+}
+
 .accentedButton {
   position: relative;
   margin-right: 1.25rem;
   margin-bottom: 0.75rem;
   cursor: pointer;
   border-radius: 0.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(32 34 37 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(33 129 226 / var(--tw-bg-opacity));
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1089,18 +1096,28 @@ a {
   background-color: rgb(66 160 255 / var(--tw-bg-opacity));
 }
 
+@media (min-width: 1024px) {
+
+  .accentedButton {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
 .button {
   position: relative;
-  margin-right: 1.25rem;
   margin-bottom: 0.75rem;
   cursor: pointer;
   border-radius: 0.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(32 34 37 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(54 56 64 / var(--tw-bg-opacity));
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1111,6 +1128,14 @@ a {
 .button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(76 80 92 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 1024px) {
+
+  .button {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 .cardContainer {
@@ -1850,14 +1875,5 @@ a {
 
   .lg\:hidden {
     display: none;
-  }
-
-  .lg\:text-left {
-    text-align: left;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 } 

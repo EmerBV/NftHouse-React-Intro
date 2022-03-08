@@ -81,11 +81,11 @@ a {
 }
 
 .copyContainer {
-  @apply w-1/2 justify-center md:items-center sm:items-start;
+  @apply w-1/2 justify-center;
 }
 
 .title {
-  @apply relative text-white text-[46px] font-semibold flex;
+  @apply relative text-white lg:text-[46px] font-semibold flex mb-3;
 }
 
 .heroDescription {
@@ -93,15 +93,15 @@ a {
 }
 
 .ctaContainer {
-  @apply flex;
+  @apply flex lg:justify-start md:justify-center;
 }
 
 .accentedButton {
-  @apply relative text-lg font-semibold px-12 py-4 bg-[#2181e2] rounded-lg mr-5 text-white hover:bg-[#42a0ff] cursor-pointer mb-3;
+  @apply relative text-lg font-semibold lg:px-12 px-6 py-2 bg-[#2181e2] rounded-lg mr-5 text-white hover:bg-[#42a0ff] cursor-pointer mb-3 border-2 border-[#202225];
 }
 
 .button {
-  @apply relative text-lg font-semibold px-12 py-4 bg-[#363840] rounded-lg mr-5 text-[#e4e8ea] hover:bg-[#4c505c] cursor-pointer mb-3;
+  @apply relative text-lg font-semibold lg:px-12 px-6 py-2 bg-[#363840] rounded-lg text-[#e4e8ea] hover:bg-[#4c505c] cursor-pointer mb-3 border-2 border-[#202225];
 }
 
 .cardContainer {
