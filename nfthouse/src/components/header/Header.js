@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../globals.css";
+import "../../index.css";
 import Logo from '../../assets/nftHouse-logo-2.png';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg'
