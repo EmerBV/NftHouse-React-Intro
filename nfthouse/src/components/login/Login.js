@@ -32,31 +32,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-        
-            <footer className="footerContainer ">
-                <div className="social">
-                    <a className="socialItem" href="#"><i className="fab fa-facebook-f"></i></a>
-                    <a className="socialItem" href="#"><i className="fab fa-instagram"></i></a>
-                    <a className="socialItem" href="#"><i className="fab fa-twitter"></i></a>
-                    <a className="socialItem" href="#"><i className="fab fa-youtube"></i></a>
-                </div>
-            
-                <ul className="list">
-                    <li>
-                        <a className="listItem" href="#">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a className="listItem" href="#">About</a>
-                    </li>
-                    <li>
-                        <a className="listItem" href="#">Terms of Service</a>
-                    </li>
-                    <li>
-                        <a className="listItem" href="#">Contact Us</a>
-                    </li>
-                </ul>
-                <p className="copyright">NftHouse <span>&copy;</span> 2022.</p>
-            </footer> 
         </div>
     );
 };

@@ -1,10 +1,11 @@
 import React from "react";
 
 import "../../index.css";
+
 import Logo from '../../assets/nftHouse-logo-2.png';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { CgProfile } from 'react-icons/cg'
-import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
+import { CgProfile } from 'react-icons/cg';
+import { MdOutlineAccountBalanceWallet } from 'react-icons/md';
 
 const style = {
     navWrapper: `max-w-full bg-[#04111d] px-[1.2rem] py-[0.2rem] items-center h-[72px] sticky top-0 z-[110] transition-[top] duration-[0.5s] ease-[0s] flex md:flex justify-between`,
