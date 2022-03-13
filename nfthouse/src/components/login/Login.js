@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import '../../index.css';
+import '../../index.css'
 
 const style = {
    signinWrapper: `flex justify-center items-center w-full h-screen bg-[#3b3d42]`,

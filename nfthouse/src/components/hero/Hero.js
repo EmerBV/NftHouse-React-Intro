@@ -1,6 +1,5 @@
 import React from 'react'
 
-import HeroImg from '../../assets/hero_Img.jpg'
 import CardImg from '../../assets/card_Img.jpg'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 
@@ -11,19 +10,19 @@ const style = {
     bgContainer: `before:content-[''] before:bg-red-500 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-[url('https://pbs.twimg.com/media/FHo7-W8VcAEnsNh?format=jpg&name=medium')] before:bg-cover before:bg-center before:opacity-30 before:blur`,
     contentWrapper: `flex h-screen justify-center items-center`,
     copyContainer: `w-1/2`,
-    title: `relative text-white text-[45px] font-bold flex mb-3 mb-6 md:p-0 px-3`,
-    heroDescription: `relative text-[#8a939b] text-[24px] mb-6 flex md:p-0 px-3`,
-    ctaContainer: `flex md:p-0 px-3`,
-    accentedButton: `relative text-lg font-semibold md:px-20 px-6 md:py-4 py-3 bg-[#2081E2] rounded-[10px] mr-5 text-white hover:bg-[#15B2E5] cursor-pointer mb-3 border-[1px] border-[#151B22] justify-center text-center items-center`,
+    title: `relative text-white text-[45px] font-bold flex mb-3 mb-6 md:p-3 px-3`,
+    heroDescription: `relative text-[#8a939b] text-[24px] mb-6 flex md:p-3 px-3`,
+    ctaContainer: `flex px-3`,
+    accentedButton: `relative text-lg font-bold lg:px-20 md:px-15 px-10 md:py-4 py-3 md:mr-5 mr-3 mb-3 bg-[#2081E2] rounded-[10px] text-white hover:bg-[#15B2E5] cursor-pointer border-[1px] border-[#151B22] justify-center text-center items-center`,
     /* ctaButtonsText: `justify-center text-center`, */
-    button: `relative text-lg font-semibold md:px-20 px-6 py-4 bg-[#353840] rounded-[10px] text-[#e4e8ea] hover:bg-[#4c505c] cursor-pointer mb-3 border-[1px] border-[#151B22]`,
-    cardContainer: `rounded-[3rem] justify-center items-center  hover:shadow-lg transform transition hover:-translate-y-2 mx-3`,
+    button: `relative text-lg font-bold lg:px-20 md:px-15 px-10 md:py-4 py-3 mr-5 mb-3 bg-[#353840] rounded-[10px] text-[#e4e8ea] hover:bg-[#4c505c] cursor-pointer border-[1px] border-[#151B22]`,
+    cardContainer: `rounded-[3rem] justify-center items-center mx-3 hover:shadow-lg transform transition hover:-translate-y-2`,
     cardImg: `rounded-t-lg h-full`,
     infoContainer: `h-20 bg-[#313338] p-4 rounded-b-lg flex items-center text-white`,
     infoImg: `h-[2.25rem] rounded-full`,
     authorContainer: `flex flex-col justify-center ml-4`,
     nameContainer: `flex`,
-    nameText: `text-[#1868b7] `,
+    nameText: `text-[#1868b7]`,
     infoIcon: `flex justify-end items-center flex-1 text-[#8a939b] text-2xl font-bold`,
 }
 

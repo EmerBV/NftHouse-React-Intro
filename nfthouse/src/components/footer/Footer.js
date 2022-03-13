@@ -1,11 +1,9 @@
-import React from "react";
+import React from "react"
 
-import "../../index.css";
+import "../../index.css"
 
-import { AiOutlineTwitter } from 'react-icons/ai';
-import { AiFillInstagram } from 'react-icons/ai';
-import { FaDiscord } from 'react-icons/fa';
-import { AiFillYoutube } from 'react-icons/ai';
+import { AiOutlineTwitter, AiFillInstagram, AiFillYoutube } from 'react-icons/ai'
+import { FaDiscord } from 'react-icons/fa'
 
 const style = {
     footerContainer: `bg-[#04111d] py-[0.2rem] items-center justify-center bottom-0 w-full relative`,
