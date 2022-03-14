@@ -9,6 +9,8 @@ import { FaDiscord } from 'react-icons/fa'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
 
+import NftCard from '../../components/nft/NftCard'
+
 const style = {
     collectionWrapper: `overflow-hidden`,
     bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center`,
@@ -114,7 +116,9 @@ const Collection = () => {
             <div className={style.collectionHeader}>A brand for the metaverse. Built by the community. We rise together. We build together. We grow together. Ready to take the red bean?</div>
         </div>
 
-        <div className={style.nftCardWrapper} id="nftList"></div>
+        <div className={style.nftCardWrapper} id="nftList">
+            <NftCard />
+        </div>
     </div>
   )
 }

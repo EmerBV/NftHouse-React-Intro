@@ -6,10 +6,11 @@ import Footer from './components/footer/Footer'
 import Hero from './components/hero/Hero'
 import Collection from './components/collection/Collection'
 
+
 function App() {
   
   return (
-    <div className='App h-full w-full m-0 block'>
+    <div className='App m-0 min-w-full min-h-full block'>
       <Header />
       {/* <Login /> */}
       {/* <Hero /> */}
