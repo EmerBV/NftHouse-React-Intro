@@ -29,13 +29,14 @@ const style = {
     collectionTitle: `text-5xl font-bold mb-4`,
     createdBy: `text-lg mb-4`,
     createdName: `text-lg text-[#2081e2] ml-1`,
-    statsContainer: `w-[44vw] flex justify-center py-4 border border-[#151b22] rounded-xl my-4 items-center text-center`,
-    collectionStat: `w-1/4 justify-center items-center text-center mr-3`,
-    statValue: `text-3xl md:font-bold font-semibold w-full flex items-center justify-center text-center`,
-    statName: `text-lg w-full mt-1 flex items-center justify-center text-center`,
+    statsContainer: `w-[44vw] flex justify-center py-8 px-3 border border-[#151b22] rounded-xl items-center text-center`,
+    collectionStat: `w-1/4 justify-center items-center text-center`,
+    statValue: `md:text-3xl md:font-bold font-medium w-full flex items-center justify-center text-center`,
+    statName: `md:text-lg text-md w-full mt-1 flex items-center justify-center text-center`,
     ethLogo: `h-6 mr-2`,
     collectionHeader: `text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4 text-center`,
-    nftCardWrapper: `flex flex-wrap max-w-full items-center justify-center`,
+    //nftCardWrapper: `flex flex-wrap max-w-full items-center justify-center`,
+    nftCardWrapper: `grid 2xl:grid-cols-9 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mx-8 items-center justify-center py-8`,
 
 }
 

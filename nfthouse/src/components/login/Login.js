@@ -1,7 +1,5 @@
 import React from 'react'
 
-import '../../index.css'
-
 const style = {
    signinWrapper: `flex justify-center items-center w-full h-screen bg-[#3b3d42]`,
    signinContainer: `relative block p-[50px] justify-center items-center w-[600px]`,

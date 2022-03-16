@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import "../../index.css";
-
 import Logo from '../../assets/nftHouse-brand.png';
 
 import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -27,9 +25,9 @@ const style = {
     //headerItemContainer: `md:flex m-0`,
     headerItem: `font-extrabold text-[20px] text-[#c8cacd] hover:text-white duration-500 cursor-pointer md:my-0 my-7 md:px-3 px-0 flex items-center justify-between`,
     //headerIcon: `text-[#8a939b] text-3xl font-black lg:px-4 md:px-3 hover:text-white cursor-pointer`,
-    headerIconContainer: `md:flex`,
+    headerIconContainer: `md:flex pb-3 md:pb-0`,
     headerIcon: `text-[#8a939b] text-[38px] font-extrabold hover:text-white duration-500 cursor-pointer md:my-0 my-7 px-0 md:px-3 flex md:flex items-center justify-between`,
-    menuBtn: `text-[38px] font-extrabold text-white absolute right-8 top-8 cursor-pointer md:hidden items-center text-center`,
+    menuBtn: `text-[38px] font-extrabold text-white absolute right-8 top-7 cursor-pointer md:hidden items-center text-center`,
     itemsContainer: `md:flex items-center absolute md:static bg-[#262626] left-0 w-full md:px-0 px-10`, 
 }
 

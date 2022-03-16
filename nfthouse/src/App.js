@@ -1,10 +1,10 @@
-import './index.css'
-
-/* import Login from './components/login/Login' */
+import Login from './components/login/Login'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Hero from './components/hero/Hero'
 import Collection from './components/collection/Collection'
+import NftDetails from './components/nft-details/NftDetails'
+import NftImage from './components/nft/NftImage'
 
 
 function App() {
@@ -14,7 +14,9 @@ function App() {
       <Header />
       {/* <Login /> */}
       {/* <Hero /> */}
-      <Collection />
+      {/* <Collection /> */}
+      <NftImage />
+      {/* <NftDetails /> */}
       {/* <Footer /> */}
     </div>
   );
