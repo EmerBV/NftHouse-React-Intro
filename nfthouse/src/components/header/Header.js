@@ -60,7 +60,7 @@ const Header = () => {
           
           <div className={style.headerItem}>
             <a href="collections.html">
-              Collections
+              Explore
             </a>
           </div>
           <div className={style.headerItem}>

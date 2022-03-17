@@ -2,7 +2,8 @@ import Login from './components/login/Login'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Hero from './components/hero/Hero'
-import Collection from './components/collection/Collection'
+import ExplorePage from './components/explore/ExplorePage'
+import CollectionPage from './components/collection/CollectionPage'
 import NftDetails from './components/nft-details/NftDetails'
 import NftImage from './components/nft/NftImage'
 
@@ -14,8 +15,9 @@ function App() {
       <Header />
       {/* <Login /> */}
       {/* <Hero /> */}
-      {/* <Collection /> */}
-      <NftImage />
+      {/* <ExplorePage /> */}
+      <CollectionPage />
+      {/* <NftImage /> */}
       {/* <NftDetails /> */}
       {/* <Footer /> */}
     </div>

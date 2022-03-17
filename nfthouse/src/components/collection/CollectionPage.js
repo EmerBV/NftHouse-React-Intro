@@ -9,10 +9,10 @@ import { FaDiscord } from 'react-icons/fa'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
 
-import NftCard from '../../components/nft/NftCard'
+import NftCard from '../nft/NftCard'
 
 const style = {
-    collectionWrapper: `overflow-hidden`,
+    collectionWrapper: `overflow-hidden min-w-[600px] py-0 block`,
     bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center`,
     bannerImage: `w-full object-cover`,
     collectionInfoContainer: `w-full px-4`,
@@ -34,13 +34,13 @@ const style = {
     statValue: `md:text-3xl md:font-bold font-medium w-full flex items-center justify-center text-center`,
     statName: `md:text-lg text-md w-full mt-1 flex items-center justify-center text-center`,
     ethLogo: `h-6 mr-2`,
-    collectionHeader: `text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4 text-center`,
+    collectionHeader: `text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4 text-center mx-3`,
     //nftCardWrapper: `flex flex-wrap max-w-full items-center justify-center`,
-    nftCardWrapper: `grid 2xl:grid-cols-9 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mx-8 items-center justify-center py-8`,
+    nftCardWrapper: `grid 2xl:grid-cols-9 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mx-0 items-center justify-center py-8 overflow-hidden min-w-[600px] px-[28px] block`,
 
 }
 
-const Collection = () => {
+const CollectionPage = () => {
   return (
     <div className={style.collectionWrapper}> 
         <div className={style.bannerImageContainer}>
@@ -124,4 +124,4 @@ const Collection = () => {
   )
 }
 
-export default Collection
+export default CollectionPage
