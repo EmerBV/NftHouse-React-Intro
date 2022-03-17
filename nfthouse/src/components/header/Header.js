@@ -41,7 +41,7 @@ const Header = () => {
       
       <a className={style.logoContainer} href="index.html">
         <div className={style.logo}>
-          <img className={style.logoImg} src={Logo} width="220px" alt="logo" />
+          <img className={style.logoImg} src={Logo} width="200px" alt="logo" />
         </div>
       </a>
 

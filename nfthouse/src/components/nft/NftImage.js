@@ -16,7 +16,7 @@ const style = {
     nftImg: `w-full`,
 }
   
-const NftImage = ({ selectedNft }) => {
+const NFTImage = ({ selectedNft }) => {
     return (
         <div className={style.nftWrapper}>
             <div className={style.topBar}>
@@ -38,4 +38,4 @@ const NftImage = ({ selectedNft }) => {
     )
 }
 
-export default NftImage
+export default NFTImage
