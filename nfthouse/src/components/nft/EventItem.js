@@ -1,5 +1,7 @@
 import React from 'react'
 
+import EthLogo from '../../assets/eth.svg'
+
 import { BsFillCartFill } from 'react-icons/bs'
 
 const style = {
@@ -23,11 +25,7 @@ const EventItem = () => {
         <div className={style.eventName}>Sale</div>
       </div>
       <div className={`${style.eventPrice} flex-[2]`}>
-        <img
-          src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
-          alt="eth"
-          className={style.ethLogo}
-        />
+        <img src={EthLogo} alt="eth" className={style.ethLogo} />
         <div className={style.eventPriceValue}>0.1</div>
       </div>
       <div className={`${style.accent} flex-[3]`}>Emer88</div>

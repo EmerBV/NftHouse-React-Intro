@@ -3,7 +3,7 @@ import React from 'react'
 import { CgArrowsExchangeV } from 'react-icons/cg'
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 import { useState } from 'react'
-/* import { dummyEvents } from '../../static/dummyEvents' */
+/* import { dummyEvents } from '../../components/common/dummyEvents' */
 import EventItem from './EventItem'
 
 const style = {
@@ -51,9 +51,7 @@ const ItemActivity = () => {
             <div className={`${style.tableHeaderElement} flex-[3]`}>To</div>
             <div className={`${style.tableHeaderElement} flex-[2]`}>Date</div>
           </div>
-          
             <EventItem />
-          
         </div>
       )}
     </div>

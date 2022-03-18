@@ -7,12 +7,13 @@ import CollectionPage from './components/collection/CollectionPage'
 import NftDetails from './components/nft/NftDetails'
 import NftImage from './components/nft/NFTImage'
 import NftId from './components/nfts/NftId'
+import NftId2 from './components/nfts/NftId2'
 
 
 function App() {
   
   return (
-    <div className='App m-0 min-w-full min-h-full block'>
+    <div className='m-0 w-full h-full block'>
       {/* <Header /> */}
       {/* <Login /> */}
       {/* <Hero /> */}
@@ -20,7 +21,8 @@ function App() {
       {/* <CollectionPage /> */}
       {/* <NftImage /> */}
       {/* <NftDetails /> */}
-      <NftId />
+      {/* <NftId /> */}
+      <NftId2 />
       {/* <Footer /> */}
     </div>
   );

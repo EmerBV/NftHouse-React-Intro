@@ -1,10 +1,13 @@
 import React from 'react'
 
+import Header from '../../components/header/Header'
+import Footer from '../../components/footer/Footer'
+
 import CardImg from '../../assets/card_Img.jpg'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 
 const style = {
-    wrapper: `w-full`,
+    wrapper: `w-full min-h-full flex flex-col`,
     /* heroContainer: `relative container justify-center items-center w-full my-2`,
     heroWrapper: `relative w-full my-2`, */
     bgContainer: `before:content-[''] before:bg-red-500 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-[url('https://pbs.twimg.com/media/FHo7-W8VcAEnsNh?format=jpg&name=medium')] before:bg-cover before:bg-center before:opacity-30 before:blur`,
@@ -28,7 +31,8 @@ const style = {
 
 const Hero = () => {
   return (
-    <div className={style.wrapper}> 
+    <div className={style.wrapper}>
+        <Header />
         <div className={style.bgContainer}>
             <div className={style.contentWrapper}>
                 <div className={style.copyContainer}>
@@ -61,8 +65,10 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-        </div>   
+        </div>
+        <Footer />   
     </div>
+    
   )
 }
 

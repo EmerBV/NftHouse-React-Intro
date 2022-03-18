@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
+import LoginButton from '../../components/common/LoginButton'
+
 import Logo from '../../assets/nftHouse-brand.png';
 
 import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
-import { MdOutlineAccountBalanceWallet } from 'react-icons/md';
+
 
 const style = {
-    navWrapper: `min-w-full min-h-full bg-[#04111d] py-[0.2rem] items-center h-[95px] sticky top-0 z-[110] transition-[top] duration-[0.5s] ease-[0s] flex md:flex shadow-lg`,
+    navWrapper: `h-full bg-[#04111d] py-[0.2rem] items-center h-[95px] sticky top-0 z-[110] transition-[top] duration-[0.5s] ease-[0s] flex md:flex shadow-lg`,
     //navWrapper: `shadow-lg w-full h-[72px] top-0 sticky z-[110] block flex`,
     //navContainer: `flex items-center justify-between bg-[#04111d] md:px-10 px-7`,
     logoContainer: `md:flex items-center pl-[20px]`,
@@ -85,9 +87,7 @@ const Header = () => {
               </a>
             </div>
             <div className={style.headerIcon}>
-              <a href="login.html">
-                <MdOutlineAccountBalanceWallet title="Login / Logout" />
-              </a>
+                <LoginButton />
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { IoMdWallet } from 'react-icons/io'
 import toast, { Toaster } from 'react-hot-toast'
 
 const style = {
+  purchaseWrapper: `flex h-20 w-full items-center rounded-lg border border-[#151c22] bg-[#303339] px-12`,
   button: `mr-8 flex items-center py-2 px-12 rounded-lg cursor-pointer`,
   buttonIcon: `text-xl`,
   buttonText: `ml-2 text-lg font-semibold`,
@@ -12,22 +13,18 @@ const style = {
 
 const Purchase = () => {
   return (
-    <div className="flex h-20 w-full items-center rounded-lg border border-[#151c22] bg-[#303339] px-12">
+    <div className={style.purchaseWrapper}>
       {/* <Toaster position="bottom-left" reverseOrder={false} /> */}
-      
-       
-          <div onClick={() => {}} className={`${style.button} bg-[#2081e2] hover:bg-[#42a0ff]`}>
-            <IoMdWallet className={style.buttonIcon} />
-            <div className={style.buttonText}>Buy Now</div>
-          </div>
-          <div className={`${style.button} border border-[#151c22]  bg-[#363840] hover:bg-[#4c505c]`}>
-            <HiTag className={style.buttonIcon} />
-            <div className={style.buttonText}>Make Offer</div>
-          </div>
-    </div>
-        
-    )
-    
+      <div onClick={() => {}} className={`${style.button} bg-[#2081e2] hover:bg-[#42a0ff]`}>
+        <IoMdWallet className={style.buttonIcon} />
+        <div className={style.buttonText}>Buy Now</div>
+      </div>
+      <div className={`${style.button} border border-[#151c22]  bg-[#363840] hover:bg-[#4c505c]`}>
+        <HiTag className={style.buttonIcon} />
+        <div className={style.buttonText}>Make Offer</div>
+      </div>
+    </div>   
+  )
   
 }
 
