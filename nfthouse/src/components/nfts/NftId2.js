@@ -11,7 +11,7 @@ const style = {
     nftIdwrapper: `w-full pt-[8px] pb-[16px] block bg-white container-lg`,
     nftIdContainer: `flex flex-col h-full flex-1 bg-gray-700`,
     flexColContainer: `items-center flex flex-col bg-red-500`,
-    generalAssetWrapper: `px-4 w-full pt-[8px] pb-[16px] block bg-blue-600`,
+    generalAssetWrapper: `px-4 w-[1280px]  max-w-full pt-[8px] pb-[16px] block bg-blue-600`,
     assetWrapper: `m-0 p-0 block bg-gray-400'`,
     assetContainer: `block bg-black`,
     topContent: `md:flex flex-row block bg-red-500`,
