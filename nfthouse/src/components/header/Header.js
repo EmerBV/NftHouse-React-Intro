@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import LoginButton from '../../components/common/LoginButton'
+import LoginButton from '../auth/LoginButton'
 
 import Logo from '../../assets/nftHouse-brand.png';
 

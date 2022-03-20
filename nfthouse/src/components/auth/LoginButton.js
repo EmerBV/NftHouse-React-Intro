@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { MdOutlineAccountBalanceWallet } from 'react-icons/md';
+import { IoMdWallet } from 'react-icons/io'
 
 const style = {
   loginButton: `text-[#8a939b] text-[38px] font-extrabold hover:text-white duration-500 cursor-pointer flex md:flex items-center`,
@@ -10,7 +10,7 @@ const style = {
 export const LoginButton = () => {
   return (
     <button className={style.loginButton} title="Login / Logout">
-        <MdOutlineAccountBalanceWallet  />
+        <IoMdWallet  />
         <span className={style.loginText}>Login</span>
     </button>
   )

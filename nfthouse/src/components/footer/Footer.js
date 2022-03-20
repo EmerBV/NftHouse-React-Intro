@@ -6,7 +6,7 @@ import { AiOutlineTwitter, AiFillInstagram, AiFillYoutube } from 'react-icons/ai
 import { FaDiscord } from 'react-icons/fa'
 
 const style = {
-    footerContainer: `bg-[#04111d] py-[0.2rem] items-center justify-center bottom-0 w-full relative`,
+    footerContainer: `bg-[#04111d] py-[0.2rem] items-center justify-center bottom-0 w-full inline-block relative`,
     joinText: `flex justify-center text-xl font-extrabold text-white pt-2`,
     social: `flex items-center px-[1.2rem] pt-[0.4rem] justify-center`,
     iconWrapper: `flex bg-[#8a939b] hover:bg-[#42a0ff] rounded-lg m-2.5`,
