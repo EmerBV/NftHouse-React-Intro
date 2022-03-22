@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom';
+
 import NftImg from '../../assets/1.png';
 import EthLogo from '../../assets/eth.svg'
 
@@ -27,7 +29,7 @@ const style = {
 const NftCard2 = () => {
   return (
         <div className={style.nftWrapper}>
-            <a href="nftDetail.html">
+            <Link to="/nftDetails">
                 <div className={style.imgContainer}>
                     <img className={style.nftImg} src={NftImg} alt="nft-image" />
                 </div>
@@ -50,7 +52,7 @@ const NftCard2 = () => {
                         </span>
                     </div>
                 </div>
-            </a>
+            </Link>
         </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Page from '../layout/Page';
 
 import Header from '../header/Header'
 
@@ -29,75 +30,77 @@ const style = {
 
 const CreatePage = () => {
   return (
-		<div>
-			<Header />
-			<div className={style.createWrapper}>
-				<div className={style.createContainer}>
-					<form className={style.formContainer}>
-						<div className={style.createText}>
-								<h3>Create New Item</h3>
-						</div>
-						<div className={style.detailTopContent} id="nftCreate">
-							<div className={style.imageWrapper}>
-								<div>
-									<div className={style.imageContainer}>
-										<label for="image"></label>
-										<input className={style.imageInput} type="image" name="image" src="./assets/port_1.png" alt="image" disabled/>
-									</div>
-								</div>
-							</div>
-							<div className={style.detailsContainer}>
-								<div className={style.generalWrapper}>
-									<div className={style.generalInfoContainer}>
-
-										<div className={style.placeholderContainer}>
-											<label for="username">Created by</label>
-											<input className={style.inputContainer} type="text" name="username" placeholder="Username" required  disabled />
-										</div>
-
-										<div className={style.placeholderContainer}>
-											<label for="name" class="">Name</label>
-											<input className={style.inputContainer} type="text" name="name" placeholder="Item name" required  disabled />
-										</div>
-
-										<div className={style.placeholderContainer}>
-											<label for="price">Price</label>
-											<input className={style.inputContainer} type="text" name="price" placeholder="Item price" required  disabled />
-										</div>
-
-										<div class={style.placeholderContainer}>
-											<label for="category">Category</label>
-											<select className={style.selectContainer} name="category" id="">
-												<option className={style.optionContainer} value="">Select category</option>
-												<option className={style.optionContainer} value="art">Art</option>
-												<option className={style.optionContainer} value="collectibles">Collectibles</option>
-											</select>
-										</div>
-
-										<div className={style.placeholderContainer}>
-											<label for="detail">Detail</label>
-											<select className={style.selectContainer} name="detail" id="">
-												<option className={style.optionContainer} value="">Select an event</option>
-												<option className={style.optionContainer} value="buy">Buy</option>
-												<option className={style.optionContainer} value="sale">Sale</option>
-											</select>
-										</div>
-
-										<div className={style.buttonWrapper}>
-											<button className={style.button} type="submit" disabled>
-												<i className={style.wallet}><IoMdWallet /></i>
-												<div className={style.create}>Create</div>
-											</button>
-										</div>
-
-									</div>
+	<Page>
+		
+		<Header />
+		<div className={style.createWrapper}>
+			<div className={style.createContainer}>
+				<form className={style.formContainer}>
+					<div className={style.createText}>
+							<h3>Create New Item</h3>
+					</div>
+					<div className={style.detailTopContent} id="nftCreate">
+						<div className={style.imageWrapper}>
+							<div>
+								<div className={style.imageContainer}>
+									<label for="image"></label>
+									<input className={style.imageInput} type="image" name="image" src="./assets/port_1.png" alt="image" disabled/>
 								</div>
 							</div>
 						</div>
-					</form>
-				</div>
+						<div className={style.detailsContainer}>
+							<div className={style.generalWrapper}>
+								<div className={style.generalInfoContainer}>
+
+									<div className={style.placeholderContainer}>
+										<label for="username">Created by</label>
+										<input className={style.inputContainer} type="text" name="username" placeholder="Username" required  disabled />
+									</div>
+
+									<div className={style.placeholderContainer}>
+										<label for="name" class="">Name</label>
+										<input className={style.inputContainer} type="text" name="name" placeholder="Item name" required  disabled />
+									</div>
+
+									<div className={style.placeholderContainer}>
+										<label for="price">Price</label>
+										<input className={style.inputContainer} type="text" name="price" placeholder="Item price" required  disabled />
+									</div>
+
+									<div class={style.placeholderContainer}>
+										<label for="category">Category</label>
+										<select className={style.selectContainer} name="category" id="">
+											<option className={style.optionContainer} value="">Select category</option>
+											<option className={style.optionContainer} value="art">Art</option>
+											<option className={style.optionContainer} value="collectibles">Collectibles</option>
+										</select>
+									</div>
+
+									<div className={style.placeholderContainer}>
+										<label for="detail">Detail</label>
+										<select className={style.selectContainer} name="detail" id="">
+											<option className={style.optionContainer} value="">Select an event</option>
+											<option className={style.optionContainer} value="buy">Buy</option>
+											<option className={style.optionContainer} value="sale">Sale</option>
+										</select>
+									</div>
+
+									<div className={style.buttonWrapper}>
+										<button className={style.button} type="submit" disabled>
+											<i className={style.wallet}><IoMdWallet /></i>
+											<div className={style.create}>Create</div>
+										</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
+		
+	</Page>
   )
 }
 

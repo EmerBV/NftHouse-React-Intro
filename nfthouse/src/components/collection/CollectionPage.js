@@ -1,4 +1,6 @@
-import React from 'react'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Page from '../layout/Page';
 
 import BannerImg from '../../assets/banner.jpg'
 import ProfileImg from '../../assets/azuki_logo_2.jpg'
@@ -42,85 +44,87 @@ const style = {
 
 const CollectionPage = () => {
   return (
-    <div className={style.collectionWrapper}> 
-        <div className={style.bannerImageContainer}>
-            <img className={style.bannerImage} src={BannerImg} alt="" />
-        </div>
-
-        <div className={style.collectionInfoContainer}>
-            <div className={style.midRow}>
-                <img className={style.profileImg} src={ProfileImg} alt="" />
+    <Page>
+        <div className={style.collectionWrapper}> 
+            <div className={style.bannerImageContainer}>
+                <img className={style.bannerImage} src={BannerImg} alt="" />
             </div>
 
-            <div className={style.endRow}>
-                <div className={style.socialIconsContainer}>
-                    <div className={style.socialIconsWrapper}>
-                        <div className={style.socialIconsContent}>
-                            <div className={style.websiteIcon}>
-                                <CgWebsite />
-                            </div>
-                            <div className={style.divider}></div>
-                            <div className={style.socialIcon}>
-                                <FaDiscord />
-                            </div>
-                            <div className={style.divider}></div>
-                            <div className={style.socialIcon}>
-                                <AiOutlineTwitter />
-                            </div>
-                            <div className={style.divider}></div>
-                            <div className={style.dotsIcon}>
-                                <HiDotsVertical />
+            <div className={style.collectionInfoContainer}>
+                <div className={style.midRow}>
+                    <img className={style.profileImg} src={ProfileImg} alt="" />
+                </div>
+
+                <div className={style.endRow}>
+                    <div className={style.socialIconsContainer}>
+                        <div className={style.socialIconsWrapper}>
+                            <div className={style.socialIconsContent}>
+                                <div className={style.websiteIcon}>
+                                    <CgWebsite />
+                                </div>
+                                <div className={style.divider}></div>
+                                <div className={style.socialIcon}>
+                                    <FaDiscord />
+                                </div>
+                                <div className={style.divider}></div>
+                                <div className={style.socialIcon}>
+                                    <AiOutlineTwitter />
+                                </div>
+                                <div className={style.divider}></div>
+                                <div className={style.dotsIcon}>
+                                    <HiDotsVertical />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div className={style.midRow}>
-            <div className={style.collectionTitle}>Azuki</div>
-        </div>
-
-        <div className={style.midRow}>
-            <div className={style.createdBy}>
-                Created by 
-                <span className={style.createdName}>emer88</span>
+            <div className={style.midRow}>
+                <div className={style.collectionTitle}>Azuki</div>
             </div>
-        </div>
 
-        <div className={style.midRow}>
-            <div className={style.statsContainer}>
-                <div className={style.collectionStat}>
-                    <div className={style.statValue}>20</div>
-                    <div className={style.statName}>items</div>
-                </div>
-                <div className={style.collectionStat}>
-                    <div className={style.statValue}>1</div>
-                    <div className={style.statName}>owners</div>
-                </div>
-                <div className={style.collectionStat}>
-                    <div className={style.statValue}>
-                        <img className={style.ethLogo} src={EthLogo} alt="" />0.1
-                    </div>
-                    <div className={style.statName}>floor price</div>
-                </div>
-                <div className={style.collectionStat}>
-                    <div className={style.statValue}>
-                        <img className={style.ethLogo} src={EthLogo} alt="" />.5K
-                    </div>
-                    <div className={style.statName}>volume traded</div>
+            <div className={style.midRow}>
+                <div className={style.createdBy}>
+                    Created by 
+                    <span className={style.createdName}>emer88</span>
                 </div>
             </div>
-        </div>
 
-        <div className={style.midRow}>
-            <div className={style.collectionHeader}>A brand for the metaverse. Built by the community. We rise together. We build together. We grow together. Ready to take the red bean?</div>
-        </div>
+            <div className={style.midRow}>
+                <div className={style.statsContainer}>
+                    <div className={style.collectionStat}>
+                        <div className={style.statValue}>20</div>
+                        <div className={style.statName}>items</div>
+                    </div>
+                    <div className={style.collectionStat}>
+                        <div className={style.statValue}>1</div>
+                        <div className={style.statName}>owners</div>
+                    </div>
+                    <div className={style.collectionStat}>
+                        <div className={style.statValue}>
+                            <img className={style.ethLogo} src={EthLogo} alt="" />0.1
+                        </div>
+                        <div className={style.statName}>floor price</div>
+                    </div>
+                    <div className={style.collectionStat}>
+                        <div className={style.statValue}>
+                            <img className={style.ethLogo} src={EthLogo} alt="" />.5K
+                        </div>
+                        <div className={style.statName}>volume traded</div>
+                    </div>
+                </div>
+            </div>
 
-        <div className={style.nftCardWrapper} id="nftList">
-            <NftCard />
+            <div className={style.midRow}>
+                <div className={style.collectionHeader}>A brand for the metaverse. Built by the community. We rise together. We build together. We grow together. Ready to take the red bean?</div>
+            </div>
+
+            <div className={style.nftCardWrapper} id="nftList">
+                <NftCard />
+            </div>
         </div>
-    </div>
+    </Page>
   )
 }
 

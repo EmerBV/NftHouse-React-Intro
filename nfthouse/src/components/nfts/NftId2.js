@@ -72,7 +72,9 @@ const NftId2 = () => {
           </div>
         </div>
       </div>
+
       <Footer />
+      
     </div>
   )
 }

@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
+import Page from '../layout/Page';
 
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
@@ -31,44 +33,45 @@ const style = {
 
 const Hero = () => {
   return (
-    <div className={style.wrapper}>
-        <Header />
-        <div className={style.bgContainer}>
-            <div className={style.contentWrapper}>
-                <div className={style.copyContainer}>
-                    <h1 className={style.title}>
-                        Discover, collect and sell extraordinary NFTs
-                    </h1>
-                    <span className={style.heroDescription}>
-                        NftHouse is the world's first and largest NFT marketplace.
-                    </span>
-                    <div className={style.ctaContainer}>
-                        <button className={style.accentedButton}>
-                            <a href="collections.html">Explore</a>
-                        </button>
-                        <button className={style.button}>
-                            <a href="createNft.html">Create</a>
-                        </button>
-                    </div>
-                </div>
-                <div className={style.cardContainer}>
-                    <img className={style.cardImg} src={CardImg} alt="" />
-                    <div className={style.infoContainer}>
-                        <img className={style.infoImg} src="https://pbs.twimg.com/media/FI231MlaIAADj_q?format=jpg&name=small" alt="" />
-                        <div className={style.authorContainer}>
-                            <div className={style.nameContainer}>AzukiZen</div>
-                            <a className={style.nameText} href="">Team Azuki</a>
+    <Page>
+        <div className={style.wrapper}>
+            <Header />
+            <div className={style.bgContainer}>
+                <div className={style.contentWrapper}>
+                    <div className={style.copyContainer}>
+                        <h1 className={style.title}>
+                            Discover, collect and sell extraordinary NFTs
+                        </h1>
+                        <span className={style.heroDescription}>
+                            NftHouse is the world's first and largest NFT marketplace.
+                        </span>
+                        <div className={style.ctaContainer}>
+                            <button className={style.accentedButton}>
+                                <a href="collections.html">Explore</a>
+                            </button>
+                            <button className={style.button}>
+                                <a href="createNft.html">Create</a>
+                            </button>
                         </div>
-                        <div className={style.infoIcon}>
-                            <AiOutlineInfoCircle />
+                    </div>
+                    <div className={style.cardContainer}>
+                        <img className={style.cardImg} src={CardImg} alt="" />
+                        <div className={style.infoContainer}>
+                            <img className={style.infoImg} src="https://pbs.twimg.com/media/FI231MlaIAADj_q?format=jpg&name=small" alt="" />
+                            <div className={style.authorContainer}>
+                                <div className={style.nameContainer}>AzukiZen</div>
+                                <a className={style.nameText} href="">Team Azuki</a>
+                            </div>
+                            <div className={style.infoIcon}>
+                                <AiOutlineInfoCircle />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer />   
         </div>
-        <Footer />   
-    </div>
-    
+    </Page>
   )
 }
 

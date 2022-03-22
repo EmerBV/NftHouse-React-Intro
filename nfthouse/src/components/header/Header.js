@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 
 import LoginButton from '../auth/LoginButton'
 
@@ -33,19 +35,21 @@ const style = {
     itemsContainer: `md:flex items-center absolute md:static bg-[#262626] left-0 w-full md:px-0 px-10`, 
 }
 
-const Header = () => {
+function Header () {
 
   const [open,setOpen] = useState(false);
   
   return (
     
     <nav className={style.navWrapper}>
-      
-      <a className={style.logoContainer} href="index.html">
-        <div className={style.logo}>
-          <img className={style.logoImg} src={Logo} width="200px" alt="logo" />
+    
+      <Link to="/">
+        <div className={style.logoContainer}>
+            <div className={style.logo}>
+              <img className={style.logoImg} src={Logo} width="200px" alt="logo" />
+            </div>
         </div>
-      </a>
+      </Link>
 
       <div onClick={() => setOpen(!open)} className={style.menuBtn}>
         {!open ? (<AiOutlineMenu />):(<AiOutlineClose />)}
@@ -59,40 +63,46 @@ const Header = () => {
             </div>
             <input className={style.searchInput} placeholder="Search items, collections and accounts" />
           </div>
-          
-          <div className={style.headerItem}>
-            <a href="collections.html">
+
+          <NavLink to="/nfts">
+            <div className={style.headerItem}>
               Explore
-            </a>
-          </div>
-          <div className={style.headerItem}>
-            <a href="stats.html">
-              Stats
-            </a>
-          </div>
-          <div className={style.headerItem}>
-            <a href="resources.html">
-              Resources
-            </a>
-          </div>
-          <div className={style.headerItem}>
-            <a href="create.html">
-              Create
-            </a>
-          </div>
-          <div className={style.headerIconContainer}>
-            <div className={style.headerIcon}>
-              <a href="login.html">
-                <CgProfile title="Account" />
-              </a>
             </div>
+          </NavLink>
+
+          <NavLink to="/404">
+            <div className={style.headerItem}>
+              Stats
+            </div>
+          </NavLink>
+          
+          <NavLink to="/404">
+            <div className={style.headerItem}>
+              Resources
+            </div>
+          </NavLink>
+ 
+          <NavLink to="/nfts/new">
+            <div className={style.headerItem}>
+              Create
+            </div>
+          </NavLink>
+          
+          <div className={style.headerIconContainer}>
+            
+            <NavLink to="/collection" end>
+              <div className={style.headerIcon}>
+                <CgProfile title="Account" />
+              </div>
+            </NavLink>
+            
             <div className={style.headerIcon}>
                 <LoginButton />
             </div>
+
           </div>
         </div>
       </div>
-      
     </nav>
 
   );

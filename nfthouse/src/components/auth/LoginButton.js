@@ -1,4 +1,7 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
+
+import { logout } from '../auth/service';
+import { useAuth } from './context';
 
 import { IoMdWallet } from 'react-icons/io'
 
@@ -7,9 +10,22 @@ const style = {
   loginText: `font-extrabold text-[20px] text-[#8a939b] hover:text-white duration-500 pl-3`,
 }
 
-export const LoginButton = () => {
-  return (
-    <button className={style.loginButton} title="Login / Logout">
+function LoginButton({ className }) {
+
+  const { isLogged, handleLogout: onLogout } = useAuth();
+
+  const handleLogoutClick = async () => {
+    await logout();
+    onLogout();
+  };
+
+  return isLogged ? (
+    <button className={`${style.loginButton} ${className}`} onClick={handleLogoutClick} title="Login / Logout">
+        <IoMdWallet  />
+        <span className={style.loginText}>Logout</span>
+    </button>
+  ) : (
+    <button as={Link} to="/login" className={`${style.loginButton} ${className}`} title="Login / Logout">
         <IoMdWallet  />
         <span className={style.loginText}>Login</span>
     </button>
