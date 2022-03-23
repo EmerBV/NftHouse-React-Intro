@@ -47,6 +47,7 @@ function App({ isInitiallyLogged }) {
                                 }
                                 />
                             <Route path="/login" element={<Login onLogin={handleLogin} />} />
+                                <Route path="/signup" element={<Signup />} />
                             <Route path="/nft" element={<Navigate to="/nfts" />} />
                             <Route path="/404" element={<div>404 | Not Found Page</div>} />
                             <Route path="*" element={<Navigate to="/404" />} />

@@ -96,9 +96,11 @@ function Header () {
               </div>
             </NavLink>
             
-            <div className={style.headerIcon}>
-                <LoginButton />
-            </div>
+            <NavLink to="/login">
+              <div className={style.headerIcon}>
+                  <LoginButton />
+              </div>
+            </NavLink>
 
           </div>
         </div>

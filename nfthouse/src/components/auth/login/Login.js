@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Header from '../../header/Header'
 import Footer from '../../footer/Footer'
-import { login } from '../service';
+import { login } from '../service'
+
 import T from 'prop-types';
 
 const style = {
@@ -18,35 +20,35 @@ const style = {
    questionContainer: `flex justify-center items-center`, 
 }
 
-function useRenders() {
+/* function useRenders() {
     const count = useRef(1);
   
     useEffect(() => {
       count.current++;
     });
     return count.current;
-}
+} */
 
 function Login({ onLogin }) {
 
-    const renders = useRenders();
-    const ref = useRef(null);
+    /* const renders = useRenders();
+    const ref = useRef(null); */
     const navigate = useNavigate();
     const location = useLocation();
     const [credentials, setCredentials] = useState({
-        username: '',
+        email: '',
         password: '',
         remember: false,
     });
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
+    /* useEffect(() => {
         console.log(ref.current);
         ref.current.focus();
-    }, []);
+    }, []); */
 
-    const { username, password, remember } = credentials;
+    const { email, password, remember } = credentials;
 
     const handleChange = useCallback(event => {
         setCredentials(credentials => ({
@@ -78,15 +80,15 @@ function Login({ onLogin }) {
 
     const buttonDisabled = useMemo(() => {
         console.log('calculando...');
-        return !username || !password || isLoading;
-    }, [username, password, isLoading]);
+        return !email || !password || isLoading;
+    }, [email, password, isLoading]);
 
     return (
         <div>
             <Header />
             <div className={style.signinWrapper}>
                 <div className={style.signinContainer}>
-                    {renders}
+                    {/* {renders} */}
                     <h1 className={style.signinText}>Sign In</h1>
 
                     <form className={style.formContainer} onSubmit={handleSubmit}>
@@ -94,33 +96,34 @@ function Login({ onLogin }) {
                             <input 
                                 className={style.placeholderContainer} 
                                 type="text"
-                                name="username"
-                                value={username}
+                                name="email"
+                                value={email}
                                 onChange={handleChange}
-                                autocomplete="off" 
-                                placeholder="User name" 
+                                autoComplete="off" 
+                                placeholder="email" 
                                 required 
                              />
                         </div>
-                        <div className="mb-4">
+                        <div className={style.inputContainer}>
                             <input 
                                 className={style.placeholderContainer} 
                                 type="password" 
                                 name="password"
                                 value={password}
                                 onChange={handleChange}
-                                autocomplete="off" 
+                                autoComplete="off" 
                                 placeholder="Password" 
                                 required 
                              />
                         </div>
+                        
                         <input
                             type="checkbox"
                             name="remember"
                             checked={remember}
                             value="remember"
                             onChange={handleChange}
-                        />
+                        />                        
 
                         <div className={style.loginBtnContainer}>
                             <button 
@@ -132,13 +135,13 @@ function Login({ onLogin }) {
                             </button>
                         </div>
                         <div className={style.questionContainer}>
-                            <p className="text-white">Don't have an <a className="hover:text-[#2081e2]" href="signup.html">account</a> yet?</p>
+                            <p className="text-white">Don't have an <Link to="/signup" className="hover:text-[#2081e2]">account</Link> yet?</p>
                         </div>
                     </form>
 
                     {error && (
                         <div onClick={resetError} className="loginPage-error">
-                        {error.message}
+                            {error.message}
                         </div>
                     )}
         
