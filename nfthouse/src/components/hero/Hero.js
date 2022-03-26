@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Navigate, useParams } from 'react-router-dom';
 import Page from '../layout/Page';
 
@@ -46,12 +47,12 @@ const Hero = () => {
                             NftHouse is the world's first and largest NFT marketplace.
                         </span>
                         <div className={style.ctaContainer}>
-                            <button className={style.accentedButton}>
-                                <a href="collections.html">Explore</a>
-                            </button>
-                            <button className={style.button}>
-                                <a href="createNft.html">Create</a>
-                            </button>
+                            <Link to="/assets" className={style.accentedButton}>
+                                Explore
+                            </Link>
+                            <Link to="/asset/create" className={style.button}>
+                                Create
+                            </Link>
                         </div>
                     </div>
                     <div className={style.cardContainer}>

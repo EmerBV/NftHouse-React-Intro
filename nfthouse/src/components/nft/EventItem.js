@@ -15,22 +15,22 @@ const style = {
   accent: `text-[#2081e2]`,
 }
 
-const EventItem = () => {
+const EventItem = ({ event }) => {
   return (
     <div className={style.eventItem}>
       <div className={`${style.event} flex-[2]`}>
         <div className={style.eventIcon}>
           <BsFillCartFill />
         </div>
-        <div className={style.eventName}>Sale</div>
+        <div className={style.eventName}>{event.sale}</div>
       </div>
       <div className={`${style.eventPrice} flex-[2]`}>
         <img src={EthLogo} alt="eth" className={style.ethLogo} />
-        <div className={style.eventPriceValue}>0.1</div>
+        <div className={style.eventPriceValue}>{event.price}</div>
       </div>
-      <div className={`${style.accent} flex-[3]`}>Emer88</div>
-      <div className={`${style.accent} flex-[3]`}>KC</div>
-      <div className={`${style.accent} flex-[2]`}>17/03/2022</div>
+      <div className={`${style.accent} flex-[3]`}>{event.name}</div>
+      <div className={`${style.accent} flex-[3]`}>{event.name}</div>
+      <div className={`${style.accent} flex-[2]`}>{event.createdAt}</div>
     </div>
   )
 }

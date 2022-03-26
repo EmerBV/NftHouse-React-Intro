@@ -3,9 +3,9 @@ import client, { removeAuthorizationHeader, setAuthorizationHeader, } from '../.
 import storage from '../../utils/storage';
 
 export const login = ({ remember, ...credentials }) => {
-    return client.post('/auth/login', credentials).then(({ accessToken }) => {
+    return client.post('api/auth/login', credentials).then(({ accessToken }) => {
         setAuthorizationHeader(accessToken);
-        storage.set('auth', accessToken);
+        if (remember === true) storage.set('auth', accessToken);
     });
 };
 

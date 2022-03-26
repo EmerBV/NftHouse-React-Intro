@@ -1,12 +1,11 @@
-import T from 'prop-types';
 import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
-import AuthContext, { AuthContextConsumer } from './context';
+import AuthContext from './context';
 
-const RequireAuth = ({ isLogged, children }) => {
+const RequireAuth = ({ children }) => {
   const location = useLocation();
-
+  const { isLogged } = useContext(AuthContext);
   if (!isLogged) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
@@ -14,21 +13,5 @@ const RequireAuth = ({ isLogged, children }) => {
   return children;
 };
 
-RequireAuth.propTypes = {
-  isLogged: T.bool,
-  children: T.node,
-};
 
-const ConectedRequireAuth = props => (
-  <AuthContextConsumer>
-    {({ isLogged }) => <RequireAuth isLogged={isLogged} {...props} />}
-  </AuthContextConsumer>
-);
-
-// const ConectedRequireAuth = props => {
-//   const { isLogged } = useContext(AuthContext);
-
-//   return <RequireAuth isLogged={isLogged} {...props} />;
-// };
-
-export default ConectedRequireAuth;
+export default RequireAuth;

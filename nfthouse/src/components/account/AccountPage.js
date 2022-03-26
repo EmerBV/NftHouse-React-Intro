@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Page from '../layout/Page';
 
+import Header from '../header/Header'
 import BannerImg from '../../assets/banner.jpg'
 import ProfileImg from '../../assets/azuki_logo_2.jpg'
 import EthLogo from '../../assets/eth.svg'
@@ -11,7 +12,7 @@ import { FaDiscord } from 'react-icons/fa'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
 
-import NftCard from '../nft/NftCard'
+import NftCard from '../nft/NftCard2'
 
 const style = {
     collectionWrapper: `overflow-hidden min-w-[600px] py-0 block`,
@@ -42,9 +43,12 @@ const style = {
 
 }
 
-const CollectionPage = () => {
+const AccountPage = () => {
   return (
     <Page>
+
+        <Header />
+        
         <div className={style.collectionWrapper}> 
             <div className={style.bannerImageContainer}>
                 <img className={style.bannerImage} src={BannerImg} alt="" />
@@ -120,12 +124,13 @@ const CollectionPage = () => {
                 <div className={style.collectionHeader}>A brand for the metaverse. Built by the community. We rise together. We build together. We grow together. Ready to take the red bean?</div>
             </div>
 
-            <div className={style.nftCardWrapper} id="nftList">
-                <NftCard />
+            <div className={style.nftCardWrapper}>
+                {/* <NftCard /> */}
             </div>
         </div>
+        
     </Page>
   )
 }
 
-export default CollectionPage
+export default AccountPage

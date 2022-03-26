@@ -1,4 +1,9 @@
-import React from 'react'
+import { useState, useEffect, Fragment } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
+import { getAdvert } from '../nfts/service';
+import NftCard from '../nft/NftCard2'
+import { login as getUser } from '../auth/service'
 
 import { AiFillHeart } from 'react-icons/ai'
 import { MdRefresh } from 'react-icons/md'
@@ -12,7 +17,7 @@ const style = {
   accent: `text-[#2081e2]`,
   nftTitle: `text-3xl font-extrabold text-white`,
   otherInfo: `flex`,
-  ownedBy: `text-[#8a939b] mr-4`,
+  ownedBy: `text-[#8a939b] mr-2`,
   likes: `flex items-center text-[#8a939b]`,
   likeIcon: `mr-1`,
   actionButtonsContainer: `w-44`,
@@ -21,19 +26,20 @@ const style = {
   divider: `border-r-2`,
 }
 
-const NftDetails = () => {
+const NftDetails = ({ selectedNft, id, name }) => {
+
   return (
     <div className={style.wrapper}>
       <div className={style.infoContainer}>
-        <div className={style.accent}>Bored Ape Yacht Club</div>
-        {/* <div className={style.nftTitle}>{selectedNft?.name}</div> */}
-        <div className={style.nftTitle}>Azuki</div>
+        <div className={style.accent}>{id}</div>
+        <div className={style.nftTitle}>{name}</div>
+        {/* <div className={style.nftTitle}>Azuki</div> */}
         <div className={style.otherInfo}>
           <div className={style.ownedBy}>
-            Owned by <span className={style.accent}>e88vault</span>
+            Owned by <span className={style.accent}>KC</span>
           </div>
           <div className={style.likes}>
-            <AiFillHeart className={style.likeIcon} /> 2.3K favorites
+            <AiFillHeart className={style.likeIcon} />2.3K favorites
           </div>
         </div>
       </div>

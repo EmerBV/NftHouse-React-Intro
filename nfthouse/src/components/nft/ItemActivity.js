@@ -2,8 +2,8 @@ import React from 'react'
 
 import { CgArrowsExchangeV } from 'react-icons/cg'
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
-import { useState } from 'react'
-/* import { dummyEvents } from '../../components/common/dummyEvents' */
+import { useState, useEffect } from 'react'
+import { getAdverts } from '../nfts/service'
 import EventItem from './EventItem'
 
 const style = {
@@ -21,6 +21,18 @@ const style = {
 }
 
 const ItemActivity = () => {
+  const [adverts, setAdverts] = useState([]);
+
+  useEffect(() => {
+    query();
+  }, []);
+
+  const query = () => {
+    getAdverts()
+    .then(adverts => setAdverts(adverts),
+    );
+  };
+
   const [toggle, setToggle] = useState(true)
   return (
     <div className={style.wrapper}>
@@ -51,9 +63,15 @@ const ItemActivity = () => {
             <div className={`${style.tableHeaderElement} flex-[3]`}>To</div>
             <div className={`${style.tableHeaderElement} flex-[2]`}>Date</div>
           </div>
-            <EventItem />
+          
+          {adverts.map((event, id) => (
+            <EventItem key={id} event={event} />
+          ))}
+
         </div>
+
       )}
+
     </div>
   )
 }

@@ -1,12 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import Header from '../../header/Header'
 import Footer from '../../footer/Footer'
 import { login } from '../service'
-
-import T from 'prop-types';
+import AuthContext from '../context';
 
 const style = {
    signinWrapper: `flex justify-center items-center w-full h-screen bg-[#3b3d42]`,
@@ -16,23 +15,11 @@ const style = {
    inputContainer: `mb-4`,
    placeholderContainer: `h-[2rem] w-full border-0 rounded-md px-3 outline-0 ring-0`,
    loginBtnContainer: `flex justify-center items-center`,
-   loginBtn: `border border-[#282b2f] bg-[#2081e2] hover:bg-[#42a0ff] p-[0.3rem] my-4 text-xl font-semibold rounded-lg cursor-pointer text-white w-[250px]`,
+   loginBtn: `border border-[#282b2f] bg-[#2081e2] p-[0.3rem] my-4 text-xl font-semibold rounded-lg text-white w-[250px]`,
    questionContainer: `flex justify-center items-center`, 
 }
-
-/* function useRenders() {
-    const count = useRef(1);
-  
-    useEffect(() => {
-      count.current++;
-    });
-    return count.current;
-} */
-
-function Login({ onLogin }) {
-
-    /* const renders = useRenders();
-    const ref = useRef(null); */
+function Login() {
+    const ref = useRef(null);
     const navigate = useNavigate();
     const location = useLocation();
     const [credentials, setCredentials] = useState({
@@ -42,11 +29,11 @@ function Login({ onLogin }) {
     });
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    const { handleLogin: onLogin } = useContext(AuthContext);
 
-    /* useEffect(() => {
-        console.log(ref.current);
+    useEffect(() => {
         ref.current.focus();
-    }, []); */
+    }, []);
 
     const { email, password, remember } = credentials;
 
@@ -79,7 +66,6 @@ function Login({ onLogin }) {
     };
 
     const buttonDisabled = useMemo(() => {
-        console.log('calculando...');
         return !email || !password || isLoading;
     }, [email, password, isLoading]);
 
@@ -88,7 +74,6 @@ function Login({ onLogin }) {
             <Header />
             <div className={style.signinWrapper}>
                 <div className={style.signinContainer}>
-                    {/* {renders} */}
                     <h1 className={style.signinText}>Sign In</h1>
 
                     <form className={style.formContainer} onSubmit={handleSubmit}>
@@ -99,8 +84,9 @@ function Login({ onLogin }) {
                                 name="email"
                                 value={email}
                                 onChange={handleChange}
+                                ref={ref}
                                 autoComplete="off" 
-                                placeholder="email" 
+                                placeholder="Email" 
                                 required 
                              />
                         </div>
@@ -123,7 +109,8 @@ function Login({ onLogin }) {
                             checked={remember}
                             value="remember"
                             onChange={handleChange}
-                        />                        
+                        />
+                        <label className="ml-2 text-white">Remember me</label>                        
 
                         <div className={style.loginBtnContainer}>
                             <button 
@@ -153,8 +140,5 @@ function Login({ onLogin }) {
     );
 };
 
-Login.propTypes = {
-    onLogin: T.func,
-};
 
 export default Login;

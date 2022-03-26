@@ -64,7 +64,7 @@ function Header () {
             <input className={style.searchInput} placeholder="Search items, collections and accounts" />
           </div>
 
-          <NavLink to="/nfts">
+          <NavLink to="/adverts">
             <div className={style.headerItem}>
               Explore
             </div>
@@ -82,7 +82,7 @@ function Header () {
             </div>
           </NavLink>
  
-          <NavLink to="/nfts/new">
+          <NavLink to="/adverts/new">
             <div className={style.headerItem}>
               Create
             </div>
@@ -90,16 +90,14 @@ function Header () {
           
           <div className={style.headerIconContainer}>
             
-            <NavLink to="/collection" end>
+            <NavLink to="/account" end>
               <div className={style.headerIcon}>
                 <CgProfile title="Account" />
               </div>
             </NavLink>
             
-            <NavLink to="/login">
-              <div className={style.headerIcon}>
-                  <LoginButton />
-              </div>
+            <NavLink to="/login">            
+              <LoginButton />            
             </NavLink>
 
           </div>

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import EthLogo from '../../assets/eth.svg'
 import NftImg from '../../assets/1.png'
 
@@ -17,7 +15,9 @@ const style = {
     nftImg: `w-full`,
 }
   
-const NFTImage = ({ selectedNft }) => {
+/* const NFTImage = ({ className, photo, ...props }) => { */
+const NFTImage = ({ photo, ...props }) => {
+
     return (
         <div className={style.nftWrapper}>
             <div className={style.topBar}>
@@ -33,7 +33,7 @@ const NFTImage = ({ selectedNft }) => {
             </div>
             <div>
                 {/* <img src={selectedNft?.image} /> */}
-                <img className={style.nftImg} src={NftImg} alt="" />
+                <img className={style.nftImg}  src={photo?photo:NftImg} alt="" {...props} />
             </div>
         </div>
     )

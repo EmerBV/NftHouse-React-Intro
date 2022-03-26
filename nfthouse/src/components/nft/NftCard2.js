@@ -1,6 +1,7 @@
-import React from 'react'
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams, Link, BrowserRouter as Router } from 'react-router-dom';
 
-import { Link } from 'react-router-dom';
+import { getAdvert } from '../nfts/service';
 
 import NftImg from '../../assets/1.png';
 import EthLogo from '../../assets/eth.svg'
@@ -26,35 +27,90 @@ const style = {
 
 }
 
-const NftCard2 = () => {
-  return (
+/* const NftCard2 = ({ username, name, price, likes, photo }) => { */
+const NftCard2 = ({id, name, photo, likes, price}) => {
+    /* const [advert, setAdvert] = useState(null);
+    const { id } = useParams();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        getAdvert(id)
+          .then(advert => setAdvert(advert))
+          .catch(() => {
+            navigate('/404');
+          });
+    }, [id, navigate]);
+    const [advert, setAdvert] = useState(null);
+    const { id } = useParams();
+
+    useEffect(() => {
+        getAdvert(id)
+          .then(advert => setAdvert(advert))
+    }, [id]); 
+
+    const [isSale, setIsSale] = useState(false)
+    const [price, setPrice] = useState(0) */
+    const navigate = useNavigate();
+
+    /* useEffect(() => {
+        const sale = sales.find((sale) => sale.advert.id === advert.id)
+        if (Boolean(sale)) {
+            setIsSale(true)
+            setPrice(sale)
+        }
+    }, [sales, advert]) */
+
+    return (
+       
         <div className={style.nftWrapper}>
-            <Link to="/nftDetails">
-                <div className={style.imgContainer}>
-                    <img className={style.nftImg} src={NftImg} alt="nft-image" />
+               
+            
+                
+                <div className={style.imgContainer}
+                     onClick={() => {
+                         navigate({
+                             pathname: `/adverts/${id}`,
+                             
+                         })
+                     }}>
+                    <img 
+                        className={style.nftImg} 
+                        src={photo || NftImg} 
+                        alt="" 
+                    />
                 </div>
+                
                 <div className={style.details}>
                     <div className={style.info}>
                         <div className={style.infoLeft}>
-                            <div className={style.collectionName}>Azuki</div>
-                            <div className={style.assetName}>Azuki # 1</div>
+                            <div className={style.collectionName}>{}</div>
+                            <div className={style.assetName}>{name}</div>
                         </div>
-                        <div className={style.infoRight}>
+
+                        
+
+                            <div className={style.infoRight}>
                             <div className={style.priceTag}>Price</div>
                             <div className={style.priceValue}>
-                                <img className={style.cardEthLogo} src={EthLogo} alt="" />0.1
+                                <img className={style.cardEthLogo} src={EthLogo} alt="" />
+                                {price}
                             </div>
                         </div>
+
+                        
+                        
                     </div>
                     <div className={style.likes}>
                         <span className={style.likeIcon}>
-                            <BiHeart> 238</BiHeart>
+                            <BiHeart> {likes}</BiHeart>
                         </span>
                     </div>
                 </div>
-            </Link>
+            
+
         </div>
-  )
+
+    )
 }
 
 export default NftCard2
