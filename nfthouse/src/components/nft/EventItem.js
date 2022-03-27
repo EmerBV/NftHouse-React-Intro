@@ -1,4 +1,4 @@
-import React from 'react'
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 import EthLogo from '../../assets/eth.svg'
 
@@ -30,7 +30,10 @@ const EventItem = ({ event }) => {
       </div>
       <div className={`${style.accent} flex-[3]`}>{event.name}</div>
       <div className={`${style.accent} flex-[3]`}>{event.name}</div>
-      <div className={`${style.accent} flex-[2]`}>{event.createdAt}</div>
+      <time className={`${style.accent} flex-[2]`} 
+            dateTime={event.createdAt}>
+            {formatDistanceToNow(new Date(event.createdAt))}
+      </time>
     </div>
   )
 }

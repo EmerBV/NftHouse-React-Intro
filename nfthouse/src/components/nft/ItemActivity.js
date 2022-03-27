@@ -1,8 +1,7 @@
-import React from 'react'
-
 import { CgArrowsExchangeV } from 'react-icons/cg'
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 import { useState, useEffect } from 'react'
+
 import { getAdverts } from '../nfts/service'
 import EventItem from './EventItem'
 

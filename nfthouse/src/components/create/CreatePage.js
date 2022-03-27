@@ -133,10 +133,6 @@ const CreatePage = () => {
 											<label>Category</label>
 											<select className={style.selectContainer} onChange={handleCategorySelector}>
 												<option className={style.optionContainer} value="">Select category</option>
-												{/* <option className={style.optionContainer} value="art">Lifestyle</option>
-												<option className={style.optionContainer} value="collectibles">Mobile</option>
-												<option className={style.optionContainer} value="collectibles">Motor</option>
-												<option className={style.optionContainer} value="collectibles">Work</option> */}
 												{tags.map(tag => (
 													<option key={tag} value={tag} className={style.optionContainer}>
 														{tag}

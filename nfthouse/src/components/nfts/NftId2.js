@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import Header from '../header/Header'
 
-import { getAdvert, getAdverts } from './service'
+import { getAdvert } from './service'
 
 import NFTImage from '../nft/NFTImage'
 import NftDetails from '../nft/NftDetails'
