@@ -69,8 +69,7 @@ const NftCard2 = ({id, name, photo, likes, price}) => {
                 <div className={style.imgContainer}
                      onClick={() => {
                          navigate({
-                             pathname: `/adverts/${id}`,
-                             
+                             pathname: `/adverts/${id}`,     
                          })
                      }}>
                     <img 

@@ -47,10 +47,10 @@ const Hero = () => {
                             NftHouse is the world's first and largest NFT marketplace.
                         </span>
                         <div className={style.ctaContainer}>
-                            <Link to="/assets" className={style.accentedButton}>
+                            <Link to="/adverts" className={style.accentedButton}>
                                 Explore
                             </Link>
-                            <Link to="/asset/create" className={style.button}>
+                            <Link to="/adverts/new" className={style.button}>
                                 Create
                             </Link>
                         </div>

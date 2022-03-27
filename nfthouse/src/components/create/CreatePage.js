@@ -1,5 +1,8 @@
-import Page from '../layout/Page';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { createAdvert, getTags } from '../nfts/service';
+import Page from '../layout/Page';
 import Header from '../header/Header'
 
 import { IoMdWallet } from 'react-icons/io'
@@ -21,88 +24,160 @@ const style = {
 	selectContainer: `flex w-full items-center border border-[#151b22] rounded-lg bg-[#363840] justify-between px-3 py-2`,
 	optionContainer: `px-3 py-2 hover:bg-[#8a939b] rounded-lg`,
 	buttonWrapper: `flex mt-5`,
-	button: `border border-[#282b2f] bg-[#2081e2] hover:bg-[#42a0ff] transition ease-in-out duration-150 flex items-center py-2 px-12 text-xl font-semibold rounded-lg cursor-pointer text-white`,
+	button: `border border-[#282b2f] bg-[#2081e2] flex items-center py-2 px-12 text-xl font-semibold rounded-lg text-white`,
 	wallet: `text-xl`,
 	create: `ml-2 text-lg font-semibold`,
 
 }
 
 const CreatePage = () => {
-  return (
-	<Page>
-		
-		<Header />
-		<div className={style.createWrapper}>
-			<div className={style.createContainer}>
-				<form className={style.formContainer}>
-					<div className={style.createText}>
-							<h3>Create New Item</h3>
-					</div>
-					<div className={style.detailTopContent} id="nftCreate">
-						<div className={style.imageWrapper}>
-							<div>
-								<div className={style.imageContainer}>
-									<label></label>
-									<input className={style.imageInput} type="image" name="image" src="./assets/port_1.png" alt="image" disabled/>
+	const navigate = useNavigate();
+	const [name, setName] = useState(null);
+	const [categorySelector, setCategorySelector] = useState(null);
+	const [eventSelector, setEventSelector] = useState(null);
+	const [tags, setTags] = useState([]);
+  	const [price, setPrice] = useState(null);
+	const [inputFile, setInputFile] = useState(null);
+
+	useEffect(() => {
+		getTags().then(tags => setTags(tags));
+	}, []);
+
+	const handleInputName = e => {
+		setName(e.target.value);
+	};
+
+	const handleEventSelector = e => {
+		let valueEventSelector = Boolean(
+			e.target.value,
+		  	option => option.value,
+		);
+		setEventSelector(valueEventSelector);
+	};
+
+	const handleCategorySelector = e => {
+		let valueCategorySelector = Array.from(
+		  e.target.selectedOptions,
+		  option => option.value,
+		);
+		setCategorySelector(valueCategorySelector);
+	};
+
+	const handleInputNumber = e => {
+		if (e.target.value > 1000) {
+		  e.target.value = 1000;
+		}
+		if (e.target.value < 0) {
+		  e.target.value = 0;
+		}
+		setPrice(e.target.value);
+	};
+	
+	const handleInputfile = e => {
+		setInputFile(e.target.files[0]);
+	};
+
+	const advertFormData = () => {
+		const advertFormData = new FormData();
+		advertFormData.append('name', name);
+		advertFormData.append('sale', eventSelector);
+		advertFormData.append('price', price);
+		advertFormData.append('tags', categorySelector);
+		if (inputFile) advertFormData.append('photo', inputFile);
+		return advertFormData;
+	};
+	
+	const handleSubmit = async event => {
+		event.preventDefault();
+
+		createAdvert(advertFormData()).then(advertResp => {
+			let advert = advertResp;
+			navigate(`/adverts/${advert.id}`);
+		});
+	};
+
+	return (
+		<Page>
+			
+			<Header />
+			<div className={style.createWrapper}>
+				<div className={style.createContainer}>
+					<form className={style.formContainer} onSubmit={handleSubmit}>
+						<div className={style.createText}>
+								<h3>Create New Item</h3>
+						</div>
+						<div className={style.detailTopContent}>
+							<div className={style.imageWrapper}>
+								<div>
+									<div className={style.imageContainer}>
+										<label></label>
+										<input className={style.imageInput} type="file" onChange={handleInputfile} required />
+									</div>
+								</div>
+							</div>
+							<div className={style.detailsContainer}>
+								<div className={style.generalWrapper}>
+									<div className={style.generalInfoContainer}>
+
+										<div className={style.placeholderContainer}>
+											<label>Name</label>
+											<input className={style.inputContainer} type="string" placeholder="Item name" onChange={handleInputName} required />
+										</div>
+
+										<div className={style.placeholderContainer}>
+											<label>Price</label>
+											<input className={style.inputContainer} placeholder="Item price" onChange={handleInputNumber} required />
+										</div>
+
+										<div className={style.placeholderContainer}>
+											<label>Category</label>
+											<select className={style.selectContainer} onChange={handleCategorySelector}>
+												<option className={style.optionContainer} value="">Select category</option>
+												{/* <option className={style.optionContainer} value="art">Lifestyle</option>
+												<option className={style.optionContainer} value="collectibles">Mobile</option>
+												<option className={style.optionContainer} value="collectibles">Motor</option>
+												<option className={style.optionContainer} value="collectibles">Work</option> */}
+												{tags.map(tag => (
+													<option key={tag} value={tag} className={style.optionContainer}>
+														{tag}
+													</option>
+												))}
+											</select>
+										</div>
+
+										<div className={style.placeholderContainer}>
+											<label>Event</label>
+											<select className={style.selectContainer} onChange={handleEventSelector}>
+												<option className={style.optionContainer} value="">Select an event</option>
+												<option className={style.optionContainer} value="false">Buy</option>
+												<option className={style.optionContainer} value="true">Sale</option>
+											</select>
+										</div>
+
+										<div className={style.buttonWrapper}>
+											<button className={style.button} type="submit" 
+													disabled={
+														!name ||
+														!price ||
+														eventSelector === null ||
+														categorySelector === null ||
+														categorySelector?.length === 0
+													}>
+												<i className={style.wallet}><IoMdWallet /></i>
+												<div className={style.create}>Create</div>
+											</button>
+										</div>
+
+									</div>
 								</div>
 							</div>
 						</div>
-						<div className={style.detailsContainer}>
-							<div className={style.generalWrapper}>
-								<div className={style.generalInfoContainer}>
-
-									<div className={style.placeholderContainer}>
-										<label>Created by</label>
-										<input className={style.inputContainer} type="text" name="username" placeholder="Username" required  disabled />
-									</div>
-
-									<div className={style.placeholderContainer}>
-										<label>Name</label>
-										<input className={style.inputContainer} type="text" name="name" placeholder="Item name" required  disabled />
-									</div>
-
-									<div className={style.placeholderContainer}>
-										<label>Price</label>
-										<input className={style.inputContainer} type="text" name="price" placeholder="Item price" required  disabled />
-									</div>
-
-									<div className={style.placeholderContainer}>
-										<label>Category</label>
-										<select className={style.selectContainer} name="category" id="">
-											<option className={style.optionContainer} value="">Select category</option>
-											<option className={style.optionContainer} value="art">Lifestyle</option>
-											<option className={style.optionContainer} value="collectibles">Mobile</option>
-											<option className={style.optionContainer} value="collectibles">Motor</option>
-											<option className={style.optionContainer} value="collectibles">Work</option>
-										</select>
-									</div>
-
-									<div className={style.placeholderContainer}>
-										<label>Detail</label>
-										<select className={style.selectContainer} name="detail" id="">
-											<option className={style.optionContainer} value="">Select an event</option>
-											<option className={style.optionContainer} value="buy">Buy</option>
-											<option className={style.optionContainer} value="sale">Sale</option>
-										</select>
-									</div>
-
-									<div className={style.buttonWrapper}>
-										<button className={style.button} type="submit" disabled>
-											<i className={style.wallet}><IoMdWallet /></i>
-											<div className={style.create}>Create</div>
-										</button>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
-		</div>
-		
-	</Page>
-  )
+			
+		</Page>
+	)
 }
 
 export default CreatePage

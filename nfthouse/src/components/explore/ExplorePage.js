@@ -1,5 +1,5 @@
-import { useState, useEffect, Fragment } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import Header from '../header/Header'
 import Page from '../layout/Page';
@@ -8,6 +8,7 @@ import { getAdverts } from '../nfts/service';
 
 import NftCard from '../nft/NftCard2'
 
+import toast, { Toaster } from 'react-hot-toast'
 import { IoIosArrowDown } from 'react-icons/io'
 
 const style = {
@@ -29,13 +30,17 @@ const ExplorePage = () => {
       });
   }, [id, navigate]);
 
+  
+  toast.error("Nothing to show!")
+
   return (
     <Page>
 
       <Header />
-      
+
       <div className={style.collectionWrapper}> 
         <div className='lg:flex md:block block flex-wrap bg-[#202225] w-full justify-between items-center mt-[24px] mb-[10px] mx-0'>
+        
           <div className='block my-[16px] mx-0 bg-[#202225]'>
             <p className='font-normal text-[18px] text-white'>Items</p>
           </div>
@@ -63,7 +68,7 @@ const ExplorePage = () => {
           </div>
         </div>
      
-        {/* {adverts.length ?  (
+        {adverts.length ?  (
 
           <>
                     
@@ -71,23 +76,21 @@ const ExplorePage = () => {
               
               {adverts.map((advert, id) => (
                 
-                <Link to={`/adverts/${advert.id}`}>
-                  <NftCard
-                    key={id}
-                    advert={advert}  
-                    {...advert} 
-                  />
-                </Link>
-                
+                <NftCard
+                  key={id}
+                  advert={advert}  
+                  {...advert} 
+                />
+
               ))}
-              
+                  
             </div>
           
           </>
                      
-        ) : null } */}
+        ) : (<Toaster position="top-center" reverseOrder={true} />) }
 
-        <div className={style.nftCardWrapper}>
+        {/* <div className={style.nftCardWrapper}>
               
           {adverts.map((advert, id) => (
             
@@ -99,9 +102,8 @@ const ExplorePage = () => {
 
           ))}
               
-        </div>
+        </div> */}
 
-        
       </div>
 
     </Page>

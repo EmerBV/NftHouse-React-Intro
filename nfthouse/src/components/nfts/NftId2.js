@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import Header from '../header/Header'
 
-import { getAdvert } from './service'
+import { getAdvert, getAdverts } from './service'
 
 import NFTImage from '../nft/NFTImage'
 import NftDetails from '../nft/NftDetails'
@@ -42,6 +42,7 @@ const NftId2 = () => {
         navigate('/404');
       });
   }, [id, navigate]);
+
 
   return (
     <div>

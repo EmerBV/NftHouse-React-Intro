@@ -22,7 +22,7 @@ const EventItem = ({ event }) => {
         <div className={style.eventIcon}>
           <BsFillCartFill />
         </div>
-        <div className={style.eventName}>{event.sale}</div>
+        <div className={style.eventName}>{event.sale ? 'buy' : 'sale'}</div>
       </div>
       <div className={`${style.eventPrice} flex-[2]`}>
         <img src={EthLogo} alt="eth" className={style.ethLogo} />

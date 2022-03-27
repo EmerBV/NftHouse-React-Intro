@@ -7,8 +7,13 @@ export const getAdverts = () => {
   return client.get(url);
 };
 
-export const getAdvert = (advertId) => {
-  const url = `${advertsBaseUrl}/${advertId}`;
+export const getAdvert = (id) => {
+  const url = `${advertsBaseUrl}/${id}?`;
+  return client.get(url);
+};
+
+export const getTags = () => {
+  const url = `${advertsBaseUrl}/tags`;
   return client.get(url);
 };
 
