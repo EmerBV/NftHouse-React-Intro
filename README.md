@@ -9,18 +9,16 @@ It will also allow you to remove them from the platform.
 
 ## API usage methods
 
-We will have to install our Sparrest API in a sister folder of the project:
+We will have to install our Swagger API in a sister folder of the project:
 
 ```sh
 npm install
 ```
 
-Inside this folder we will create our db.json file where we will introduce the data of some test NFTs.
-
 To get our server up:
 
 ```sh
-npm start
+npm run start
 ```
 
 Then we must locate ourselves in the root folder of the project:
@@ -38,31 +36,20 @@ npm install
 In production:
 
 ```sh
-npx live-server
+npm start
 ```
 
 ## API access via routes
 
 List of all NFTs:
 
-- http://localhost:8000/api/nfts
+- http://localhost:3001/api/v1/adverts/
+
 
 Find an NFTs by ID:
 
-- http://localhost:8000/api/nfts/id
+- http://localhost:3001/api/v1/adverts/id?
 
-Search by category:
+Search by tags:
 
-- http://localhost:8000/api/nfts?category=art
-
-- http://localhost:8000/api/nfts?category=collectibles
-
-Search by user:
-
-- http://localhost:8000/api/nfts?username=username
-
-Search by detail:
-
-- http://localhost:8000/api/nfts?detail=sale
-
-- http://localhost:8000/api/nfts?detail=buy
+- http://localhost:3001/api/v1/adverts/tags

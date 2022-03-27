@@ -47,22 +47,38 @@ const ExplorePage = () => {
           
           <div className='md:flex block max-w-full mt-0 bg-[#202225] justify-items-end z-30 flex-nowrap'>
 
-            <div className='grow block order-1 w-full'>
-              <div className='flex bg-[#353840] hover:bg-[#4c505c] md:mr-[8px] h-[50px] rounded-[10px] border border-[#151B22] min-w-[200px] p-[12px] cursor-pointer'>
-                <div className='cursor-pointer w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'>All items</div>
-                <span className='justify-center flex flex-col ml-[12px] cursor-pointer'>
+            <div className='grow block order-1 w-full text-white font-normal text-[18px]'>
+              <select className='flex bg-[#353840] hover:bg-[#4c505c] md:mr-[8px] h-[50px] rounded-[10px] border border-[#151B22] min-w-[200px] p-[12px] cursor-pointer'>
+                <option className='cursor-pointer w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'>
+                All items
+                </option>
+                <option className='cursor-pointer w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'>
+                Buy Now
+                </option>
+                <option className='cursor-pointer w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'>
+                Has Offers
+                </option>
+                {/* <span className='justify-center flex flex-col ml-[12px] cursor-pointer'>
                   <IoIosArrowDown className='inline-block font-normal text-[24px] cursor-pointer text-[#8A939B]' />
-                </span>
-              </div>
+                </span> */}
+              </select>
             </div>
 
-            <div className='grow md:mt-0 mt-3 ml-0 md:ml-[8px] block order-2 w-full'>
-              <div className='flex bg-[#353840] hover:bg-[#4c505c] h-[50px] rounded-[10px] border border-[#151B22] min-w-[200px] p-[12px] cursor-pointer'>
-                <div className='cursor-pointer w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'>Sort by</div>
-                <span className='justify-center flex flex-col ml-[12px] cursor-pointer'>
+            <div className='grow md:mt-0 mt-3 ml-0 md:ml-[8px] block order-2 w-full text-white font-normal text-[18px]'>
+              <select className='flex bg-[#353840] hover:bg-[#4c505c] h-[50px] rounded-[10px] border border-[#151B22] min-w-[200px] p-[12px] cursor-pointer'>
+                <option className='cursor-pointer w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'>
+                Sort by
+                </option>
+                <option className='cursor-pointer w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'>
+                Price: Low to High
+                </option>
+                <option className='cursor-pointer w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'>
+                Price: High to Low
+                </option>
+                {/* <span className='justify-center flex flex-col ml-[12px] cursor-pointer'>
                   <IoIosArrowDown className='inline-block font-normal text-[24px] cursor-pointer text-[#8A939B]' />
-                </span>
-              </div>
+                </span> */}
+              </select>
             </div>
 
           </div>
@@ -88,21 +104,7 @@ const ExplorePage = () => {
           
           </>
                      
-        ) : (<Toaster position="top-center" reverseOrder={true} />) }
-
-        {/* <div className={style.nftCardWrapper}>
-              
-          {adverts.map((advert, id) => (
-            
-            <NftCard
-              key={id}
-              advert={advert}  
-              {...advert} 
-            />
-
-          ))}
-              
-        </div> */}
+        ) : null }
 
       </div>
 

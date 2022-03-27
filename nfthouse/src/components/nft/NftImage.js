@@ -14,9 +14,8 @@ const style = {
     likeText: `md:text-xl text-lg`,
     nftImg: `w-full`,
 }
-  
-/* const NFTImage = ({ className, photo, ...props }) => { */
-const NFTImage = ({ photo, ...props }) => {
+
+const NFTImage = ({ photo }) => {
 
     return (
         <div className={style.nftWrapper}>
@@ -32,8 +31,7 @@ const NFTImage = ({ photo, ...props }) => {
                 </div>
             </div>
             <div>
-                {/* <img src={selectedNft?.image} /> */}
-                <img className={style.nftImg}  src={photo?photo:NftImg} alt="" {...props} />
+                <img className={style.nftImg}  src={photo?photo:NftImg} alt="" />
             </div>
         </div>
     )
