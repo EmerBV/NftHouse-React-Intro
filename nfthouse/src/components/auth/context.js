@@ -1,13 +1,13 @@
-import { createContext, useContext } from 'react'
+import { createContext, useContext } from "react";
 
-const AuthContext = createContext()
+const AuthContext = createContext();
 
-export const AuthContextProvider = AuthContext.Provider
-export const AuthContextConsumer = AuthContext.Consumer
+export const AuthContextProvider = AuthContext.Provider;
+export const AuthContextConsumer = AuthContext.Consumer;
 
-export function useAuth () {
-  const auth = useContext(AuthContext)
-  return auth
+export function useAuth() {
+  const auth = useContext(AuthContext);
+  return auth;
 }
 
-export default AuthContext
+export default AuthContext;
