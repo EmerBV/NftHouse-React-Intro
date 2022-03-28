@@ -1,14 +1,14 @@
-import React from "react"
+import React from 'react'
 
-import { HiTag } from "react-icons/hi"
-import { IoMdWallet } from "react-icons/io"
+import { HiTag } from 'react-icons/hi'
+import { IoMdWallet } from 'react-icons/io'
 
 const style = {
   purchaseWrapper:
-    "flex h-20 w-full items-center rounded-lg border border-[#151c22] bg-[#303339] px-12",
-  button: "mr-8 flex items-center py-2 px-12 rounded-lg cursor-pointer",
-  buttonIcon: "text-xl",
-  buttonText: "ml-2 text-lg font-semibold",
+    'flex h-20 w-full items-center rounded-lg border border-[#151c22] bg-[#303339] px-12',
+  button: 'mr-8 flex items-center py-2 px-12 rounded-lg cursor-pointer',
+  buttonIcon: 'text-xl',
+  buttonText: 'ml-2 text-lg font-semibold'
 }
 
 const Purchase = () => {

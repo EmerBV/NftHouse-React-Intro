@@ -1,36 +1,36 @@
-import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import { createAdvert, getTags } from "../nfts/service"
-import Page from "../layout/Page"
-import Header from "../header/Header"
+import { createAdvert, getTags } from '../nfts/service'
+import Page from '../layout/Page'
+import Header from '../header/Header'
 
-import { IoMdWallet } from "react-icons/io"
+import { IoMdWallet } from 'react-icons/io'
 
 const style = {
-  createWrapper: "h-screen overflow-hidden",
+  createWrapper: 'h-screen overflow-hidden',
   createContainer:
-    "flex items-center justify-center container-lg text-[#e5e8eb] h-full",
-  formContainer: "container p-6",
-  createText: "items-center text-3xl font-extrabold mb-6",
-  detailTopContent: "flex py-6 justify-center",
-  imageWrapper: "mr-3",
-  imageContainer: "flex items-center",
-  imageInput: "rounded-lg border-[#151c22] border w-[345px]",
-  detailsContainer: "flex-[2] ml-4",
-  generalWrapper: "flex",
-  generalInfoContainer: "h-36 flex flex-col flex-1 justify-between mb-6",
-  placeholderContainer: "mb-1",
+    'flex items-center justify-center container-lg text-[#e5e8eb] h-full',
+  formContainer: 'container p-6',
+  createText: 'items-center text-3xl font-extrabold mb-6',
+  detailTopContent: 'flex py-6 justify-center',
+  imageWrapper: 'mr-3',
+  imageContainer: 'flex items-center',
+  imageInput: 'rounded-lg border-[#151c22] border w-[345px]',
+  detailsContainer: 'flex-[2] ml-4',
+  generalWrapper: 'flex',
+  generalInfoContainer: 'h-36 flex flex-col flex-1 justify-between mb-6',
+  placeholderContainer: 'mb-1',
   inputContainer:
-    "flex w-full items-center border border-[#151b22] px-3 py-2 rounded-lg bg-[#363840]",
+    'flex w-full items-center border border-[#151b22] px-3 py-2 rounded-lg bg-[#363840]',
   selectContainer:
-    "flex w-full items-center border border-[#151b22] rounded-lg bg-[#363840] justify-between px-3 py-2",
-  optionContainer: "px-3 py-2 hover:bg-[#8a939b] rounded-lg",
-  buttonWrapper: "flex mt-5",
+    'flex w-full items-center border border-[#151b22] rounded-lg bg-[#363840] justify-between px-3 py-2',
+  optionContainer: 'px-3 py-2 hover:bg-[#8a939b] rounded-lg',
+  buttonWrapper: 'flex mt-5',
   button:
-    "border border-[#282b2f] bg-[#2081e2] flex items-center py-2 px-12 text-xl font-semibold rounded-lg text-white",
-  wallet: "text-xl",
-  create: "ml-2 text-lg font-semibold",
+    'border border-[#282b2f] bg-[#2081e2] flex items-center py-2 px-12 text-xl font-semibold rounded-lg text-white',
+  wallet: 'text-xl',
+  create: 'ml-2 text-lg font-semibold'
 }
 
 const CreatePage = () => {
@@ -79,11 +79,11 @@ const CreatePage = () => {
 
   const advertFormData = () => {
     const advertFormData = new FormData()
-    advertFormData.append("name", name)
-    advertFormData.append("sale", eventSelector)
-    advertFormData.append("price", price)
-    advertFormData.append("tags", categorySelector)
-    if (inputFile) advertFormData.append("photo", inputFile)
+    advertFormData.append('name', name)
+    advertFormData.append('sale', eventSelector)
+    advertFormData.append('price', price)
+    advertFormData.append('tags', categorySelector)
+    if (inputFile) advertFormData.append('photo', inputFile)
     return advertFormData
   }
 

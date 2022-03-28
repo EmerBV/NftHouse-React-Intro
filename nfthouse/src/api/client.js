@@ -1,7 +1,7 @@
-import axios from "axios"
+import axios from 'axios'
 
 const client = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
+  baseURL: process.env.REACT_APP_API_BASE_URL
 })
 
 client.interceptors.response.use(
@@ -13,7 +13,7 @@ client.interceptors.response.use(
     return Promise.reject({
       message: error.response.statusText,
       ...error.response,
-      ...error.response.data,
+      ...error.response.data
     })
   }
 )

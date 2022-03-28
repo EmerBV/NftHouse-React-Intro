@@ -4,39 +4,39 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState,
-} from "react"
-import { useLocation, useNavigate, Link } from "react-router-dom"
+  useState
+} from 'react'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 
-import Header from "../../header/Header"
-import Footer from "../../footer/Footer"
-import { login } from "../service"
-import AuthContext from "../context"
+import Header from '../../header/Header'
+import Footer from '../../footer/Footer'
+import { login } from '../service'
+import AuthContext from '../context'
 
 const style = {
   signinWrapper:
-    "flex justify-center items-center w-full h-screen bg-[#3b3d42]",
+    'flex justify-center items-center w-full h-screen bg-[#3b3d42]',
   signinContainer:
-    "relative block p-[50px] justify-center items-center w-[600px]",
-  signinText: "text-[34px] text-center text-white font-[600] mb-4",
+    'relative block p-[50px] justify-center items-center w-[600px]',
+  signinText: 'text-[34px] text-center text-white font-[600] mb-4',
   formContainer:
-    "p-[50px] rounded-lg border-[#151c22] border justify-center items-center",
-  inputContainer: "mb-4",
+    'p-[50px] rounded-lg border-[#151c22] border justify-center items-center',
+  inputContainer: 'mb-4',
   placeholderContainer:
-    "h-[2rem] w-full border-0 rounded-md px-3 outline-0 ring-0",
-  loginBtnContainer: "flex justify-center items-center",
+    'h-[2rem] w-full border-0 rounded-md px-3 outline-0 ring-0',
+  loginBtnContainer: 'flex justify-center items-center',
   loginBtn:
-    "border border-[#282b2f] bg-[#2081e2] p-[0.3rem] my-4 text-xl font-semibold rounded-lg text-white w-[250px]",
-  questionContainer: "flex justify-center items-center",
+    'border border-[#282b2f] bg-[#2081e2] p-[0.3rem] my-4 text-xl font-semibold rounded-lg text-white w-[250px]',
+  questionContainer: 'flex justify-center items-center'
 }
-function Login() {
+function Login () {
   const ref = useRef(null)
   const navigate = useNavigate()
   const location = useLocation()
   const [credentials, setCredentials] = useState({
-    email: "",
-    password: "",
-    remember: false,
+    email: '',
+    password: '',
+    remember: false
   })
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -52,9 +52,9 @@ function Login() {
     setCredentials((credentials) => ({
       ...credentials,
       [event.target.name]:
-        event.target.type === "checkbox"
+        event.target.type === 'checkbox'
           ? event.target.checked
-          : event.target.value,
+          : event.target.value
     }))
   }, [])
 
@@ -68,7 +68,7 @@ function Login() {
       await login(credentials)
       setIsLoading(false)
       onLogin()
-      const from = location.state?.from?.pathname || "/"
+      const from = location.state?.from?.pathname || '/'
       navigate(from, { replace: true })
     } catch (error) {
       setError(error)
@@ -134,10 +134,10 @@ function Login() {
             </div>
             <div className={style.questionContainer}>
               <p className="text-white">
-                Don't have an{" "}
+                Don't have an{' '}
                 <Link to="/signup" className="hover:text-[#2081e2]">
                   account
-                </Link>{" "}
+                </Link>{' '}
                 yet?
               </p>
             </div>

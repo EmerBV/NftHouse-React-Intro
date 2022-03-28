@@ -1,48 +1,48 @@
-import Page from "../layout/Page"
+import Page from '../layout/Page'
 
-import Header from "../header/Header"
-import BannerImg from "../../assets/banner.jpg"
-import ProfileImg from "../../assets/azuki_logo_2.jpg"
-import EthLogo from "../../assets/eth.svg"
+import Header from '../header/Header'
+import BannerImg from '../../assets/banner.jpg'
+import ProfileImg from '../../assets/azuki_logo_2.jpg'
+import EthLogo from '../../assets/eth.svg'
 
-import { CgWebsite } from "react-icons/cg"
-import { FaDiscord } from "react-icons/fa"
-import { AiOutlineTwitter } from "react-icons/ai"
-import { HiDotsVertical } from "react-icons/hi"
+import { CgWebsite } from 'react-icons/cg'
+import { FaDiscord } from 'react-icons/fa'
+import { AiOutlineTwitter } from 'react-icons/ai'
+import { HiDotsVertical } from 'react-icons/hi'
 
 const style = {
-  collectionWrapper: "overflow-hidden min-w-[600px] py-0 block",
+  collectionWrapper: 'overflow-hidden min-w-[600px] py-0 block',
   bannerImageContainer:
-    "h-[20vh] w-screen overflow-hidden flex justify-center items-center",
-  bannerImage: "w-full object-cover",
-  collectionInfoContainer: "w-full px-4",
-  midRow: "w-full flex justify-center text-white",
+    'h-[20vh] w-screen overflow-hidden flex justify-center items-center',
+  bannerImage: 'w-full object-cover',
+  collectionInfoContainer: 'w-full px-4',
+  midRow: 'w-full flex justify-center text-white',
   profileImg:
-    "w-40 h-40 object-cover rounded-full border-2 border-[#202225] mt-[-4rem]",
-  endRow: "w-full flex justify-end text-white",
-  socialIconsContainer: "flex text-3xl mb-[-2rem]",
-  socialIconsWrapper: "w-44 justify-center",
+    'w-40 h-40 object-cover rounded-full border-2 border-[#202225] mt-[-4rem]',
+  endRow: 'w-full flex justify-end text-white',
+  socialIconsContainer: 'flex text-3xl mb-[-2rem]',
+  socialIconsWrapper: 'w-44 justify-center',
   socialIconsContent:
-    "flex container justify-between text-[1.4rem] border-2 rounded-lg px-2",
-  websiteIcon: "my-2 cursor-pointer pl-1",
-  socialIcon: "my-2 cursor-pointer",
-  dotsIcon: "my-2 cursor-pointer pr-1",
-  divider: "border-r-2",
-  collectionTitle: "text-5xl font-bold mb-4",
-  createdBy: "text-lg mb-4",
-  createdName: "text-lg text-[#2081e2] ml-1",
+    'flex container justify-between text-[1.4rem] border-2 rounded-lg px-2',
+  websiteIcon: 'my-2 cursor-pointer pl-1',
+  socialIcon: 'my-2 cursor-pointer',
+  dotsIcon: 'my-2 cursor-pointer pr-1',
+  divider: 'border-r-2',
+  collectionTitle: 'text-5xl font-bold mb-4',
+  createdBy: 'text-lg mb-4',
+  createdName: 'text-lg text-[#2081e2] ml-1',
   statsContainer:
-    "w-[44vw] flex justify-center py-8 px-3 border border-[#151b22] rounded-xl items-center text-center",
-  collectionStat: "w-1/4 justify-center items-center text-center",
+    'w-[44vw] flex justify-center py-8 px-3 border border-[#151b22] rounded-xl items-center text-center',
+  collectionStat: 'w-1/4 justify-center items-center text-center',
   statValue:
-    "md:text-3xl md:font-bold font-medium w-full flex items-center justify-center text-center",
+    'md:text-3xl md:font-bold font-medium w-full flex items-center justify-center text-center',
   statName:
-    "md:text-lg text-md w-full mt-1 flex items-center justify-center text-center",
-  ethLogo: "h-6 mr-2",
+    'md:text-lg text-md w-full mt-1 flex items-center justify-center text-center',
+  ethLogo: 'h-6 mr-2',
   collectionHeader:
-    "text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4 text-center mx-3",
+    'text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4 text-center mx-3',
   nftCardWrapper:
-    "grid 2xl:grid-cols-9 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mx-0 items-center justify-center py-8 overflow-hidden min-w-[600px] px-[28px] block",
+    'grid 2xl:grid-cols-9 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mx-0 items-center justify-center py-8 overflow-hidden min-w-[600px] px-[28px] block'
 }
 
 const AccountPage = () => {

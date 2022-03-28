@@ -1,5 +1,5 @@
 const storage = {
-  get(key) {
+  get (key) {
     const value = localStorage.getItem(key)
     if (!value) {
       return null
@@ -7,17 +7,17 @@ const storage = {
     return JSON.parse(value)
   },
 
-  set(key, value) {
+  set (key, value) {
     localStorage.setItem(key, JSON.stringify(value))
   },
 
-  remove(key) {
+  remove (key) {
     localStorage.removeItem(key)
   },
 
-  clear() {
+  clear () {
     localStorage.clear()
-  },
+  }
 }
 
 export default storage

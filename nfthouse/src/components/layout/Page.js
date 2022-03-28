@@ -1,6 +1,6 @@
-import { Fragment } from "react"
+import { Fragment } from 'react'
 
-function Page({ children }) {
+function Page ({ children }) {
   return (
     <Fragment>
       <section>{children}</section>
