@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
 
 import Header from '../header/Header'
 import CategoryButton from '../common/CategoryButton'
@@ -27,24 +26,7 @@ const style = {
 const ExplorePage = () => {
   const [adverts, setAdverts] = useState([])
   const [categoryFilter, setCategoryFilter] = useState([])
-  const [eventSelector, setEventSelector] = useState([])
-  const [isSaleFilter, setIsSaleFilter] = useState('')
   const [isFilter, setIsFilter] = useState('all')
-  const { id } = useParams()
-  const navigate = useNavigate()
-
-  /* useEffect(() => {
-    getAdverts(id, eventSelector, isSaleFilter)
-      .then((advert) => setAdverts(advert))
-      .catch(() => {
-        navigate('/404')
-      })
-  }, [id, eventSelector, isSaleFilter, navigate])
-
-  const sendFilters = e => {
-    e.preventDefault()
-    sendAllFilters(true)
-  } */
 
   const changeCategorySelector = category => {
     setCategoryFilter(category)
@@ -57,11 +39,10 @@ const ExplorePage = () => {
 
   useEffect(() => {
     query()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const query = () => {
-    getAdverts(isSaleFilter, categoryFilter).then(
+    getAdverts(categoryFilter).then(
       adverts => setAdverts(adverts)
     )
   }

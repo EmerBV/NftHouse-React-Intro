@@ -2,10 +2,8 @@ import client from '../../api/client'
 
 const advertsBaseUrl = '/api/v1/adverts'
 
-export const getAdverts = (isSale, category) => {
+export const getAdverts = (category) => {
   let url = `${advertsBaseUrl}?`
-
-  if (isSale === 'true' || isSale === 'false') url += `&sale=${isSale}`
 
   category?.forEach(tag => {
     url += `&tags=${tag}`
