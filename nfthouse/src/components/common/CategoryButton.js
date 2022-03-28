@@ -8,7 +8,7 @@ const style = {
   selectOptions: 'cursor-pointer min-w-[200px] w-full border-0 outline-0 ring-0 m-0 inline-block px-[2px] bg-transparent text-white font-normal text-[18px]'
 }
 
-const CategoryButton = ({ changeCategorySelector, ...props }) => {
+const CategoryButton = ({ changeCategorySelector, ...adverts }) => {
   const [tags, setTags] = useState([])
 
   useEffect(() => {
@@ -28,9 +28,9 @@ const CategoryButton = ({ changeCategorySelector, ...props }) => {
         <select
             className={style.selectOptionsContainer}
             onChange={handleCategorySelector}
-            {...props}
+            {...adverts}
         >
-            <option className={style.selectOptions}>
+            <option className={style.selectOptions} value="">
                 Select category
             </option>
             {tags.map((tag) => (

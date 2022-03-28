@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 import Header from '../header/Header'
 import CategoryButton from '../common/CategoryButton'
-import PriceRangeButton from '../common/PriceRangeButton'
+import SortPriceButton from '../common/SortPriceButton'
 import Page from '../layout/Page'
 import { getAdverts } from '../nfts/service'
 import NftCard from '../nft/NftCard'
@@ -63,7 +63,8 @@ const ExplorePage = () => {
               changeCategorySelector={changeCategorySelector}
             />
 
-            <PriceRangeButton />
+            <SortPriceButton
+              onClick={sendAllFilters} />
           </div>
         </div>
 
