@@ -1,47 +1,36 @@
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 import LoginButton from '../auth/LoginButton'
 
-import Logo from '../../assets/nftHouse-brand.png';
+import Logo from '../../assets/nftHouse-brand.png'
 
-import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { CgProfile } from 'react-icons/cg';
-
+import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import { CgProfile } from 'react-icons/cg'
 
 const style = {
-    navWrapper: `h-full bg-[#04111d] py-[0.2rem] items-center h-[95px] sticky top-0 z-[110] transition-[top] duration-[0.5s] ease-[0s] flex md:flex shadow-lg`,
-    //navWrapper: `shadow-lg w-full h-[72px] top-0 sticky z-[110] block flex`,
-    //navContainer: `flex items-center justify-between bg-[#04111d] md:px-10 px-7`,
-    logoContainer: `md:flex items-center pl-[20px]`,
-    logo: `flex items-center ml-[8px]`,
-    logoImg: `block items-center`,
-    //brandName: `block w-[130px] mb-[2px] ml-[10px]`,
-    //searchBar: `hidden lg:flex md:flex flex-1 bg-[#363840] rounded-[0.8rem] hover:bg-[#4c505c] items-center  text-center`,
-    searchBar: `flex w-full items-center bg-[#363840] rounded-[0.8rem] hover:bg-[#4c505c] md:my-0 my-7 font-extrabold text-[20px]`,
-    searchIcon: `text-[#8a939b] text-3xl mx-6 items-center`,
-    //searchInput: `h-[2.6rem] w-full border-0 bg-transparent outline-0 ring-0 px-2 pl-0 text-[#e6e8eb] placeholder:text-[#8a939b]`,
-    searchInput: `md:flex md:items-center h-[60px] w-full border-0 bg-transparent outline-0 ring-0 text-[#e6e8eb] placeholder:text-[#8a939b]`,
-    //headerItems: `hidden lg:flex md:flex justify-end items-center`,
-    headerItems: `md:flex items-center md:bg-[#04111d] w-full justify-between md:px-3 px-0`,
-    //headerItem: `lg:px-4 md:px-3 font-bold text-[#c8cacd] hover:text-white cursor-pointer`,
-    //headerItemContainer: `md:flex m-0`,
-    headerItem: `font-extrabold text-[20px] text-[#c8cacd] hover:text-white duration-500 cursor-pointer md:my-0 my-7 md:px-3 px-0 flex items-center justify-between`,
-    //headerIcon: `text-[#8a939b] text-3xl font-black lg:px-4 md:px-3 hover:text-white cursor-pointer`,
-    headerIconContainer: `md:flex pb-3 md:pb-0`,
-    headerIcon: `text-[#8a939b] text-[38px] font-extrabold hover:text-white duration-500 cursor-pointer md:my-0 my-7 px-0 md:px-3 flex md:flex items-center justify-between`,
-    menuBtn: `text-[38px] font-extrabold text-white absolute right-8 top-7 cursor-pointer md:hidden items-center text-center`,
-    itemsContainer: `md:flex items-center absolute md:static bg-[#262626] left-0 w-full md:px-0 px-10`, 
+  navWrapper: 'h-full bg-[#04111d] py-[0.2rem] items-center h-[95px] sticky top-0 z-[110] transition-[top] duration-[0.5s] ease-[0s] flex md:flex shadow-lg',
+  logoContainer: 'md:flex items-center pl-[20px]',
+  logo: 'flex items-center ml-[8px]',
+  logoImg: 'block items-center',
+  searchBar: 'flex w-full items-center bg-[#363840] rounded-[0.8rem] hover:bg-[#4c505c] md:my-0 my-7 font-extrabold text-[20px]',
+  searchIcon: 'text-[#8a939b] text-3xl mx-6 items-center',
+  searchInput: 'md:flex md:items-center h-[60px] w-full border-0 bg-transparent outline-0 ring-0 text-[#e6e8eb] placeholder:text-[#8a939b]',
+  headerItems: 'md:flex items-center md:bg-[#04111d] w-full justify-between md:px-3 px-0',
+  headerItem: 'font-extrabold text-[20px] text-[#c8cacd] hover:text-white duration-500 cursor-pointer md:my-0 my-7 md:px-3 px-0 flex items-center justify-between',
+  headerIconContainer: 'md:flex pb-3 md:pb-0',
+  headerIcon: 'text-[#8a939b] text-[38px] font-extrabold hover:text-white duration-500 cursor-pointer md:my-0 my-7 px-0 md:px-3 flex md:flex items-center justify-between',
+  menuBtn: 'text-[38px] font-extrabold text-white absolute right-8 top-7 cursor-pointer md:hidden items-center text-center',
+  itemsContainer: 'md:flex items-center absolute md:static bg-[#262626] left-0 w-full md:px-0 px-10'
 }
 
 function Header () {
+  const [open, setOpen] = useState(false)
 
-  const [open,setOpen] = useState(false);
-  
   return (
-    
+
     <nav className={style.navWrapper}>
-    
+
       <Link to="/">
         <div className={style.logoContainer}>
             <div className={style.logo}>
@@ -51,10 +40,10 @@ function Header () {
       </Link>
 
       <div onClick={() => setOpen(!open)} className={style.menuBtn}>
-        {!open ? (<AiOutlineMenu />):(<AiOutlineClose />)}
+        {!open ? (<AiOutlineMenu />) : (<AiOutlineClose />)}
       </div>
 
-      <div className={`${style.itemsContainer} ${open ? 'top-[95px]':'top-[-490px]'}`}>
+      <div className={`${style.itemsContainer} ${open ? 'top-[95px]' : 'top-[-490px]'}`}>
         <div className={style.headerItems}>
           <div className={style.searchBar}>
             <div className={style.searchIcon}>
@@ -74,29 +63,29 @@ function Header () {
               Stats
             </div>
           </NavLink>
-          
+
           <NavLink to="/404">
             <div className={style.headerItem}>
               Resources
             </div>
           </NavLink>
- 
+
           <NavLink to="/adverts/new">
             <div className={style.headerItem}>
               Create
             </div>
           </NavLink>
-          
+
           <div className={style.headerIconContainer}>
-            
+
             <NavLink to="/account" end>
               <div className={style.headerIcon}>
                 <CgProfile title="Account" />
               </div>
             </NavLink>
-            
-            <NavLink to="/login">            
-              <LoginButton />            
+
+            <NavLink to="/login">
+              <LoginButton />
             </NavLink>
 
           </div>
@@ -104,8 +93,7 @@ function Header () {
       </div>
     </nav>
 
-  );
-  
+  )
 };
 
-export default Header;
+export default Header

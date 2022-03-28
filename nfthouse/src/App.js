@@ -7,26 +7,24 @@ import Signup from './components/signup/Signup'
 import Hero from './components/hero/Hero'
 import ExplorePage from './components/explore/ExplorePage'
 import AccountPage from './components/account/AccountPage'
-import NftId2 from './components/nfts/NftId2'
+import NftId from './components/nfts/NftId'
 import CreatePage from './components/create/CreatePage'
 import NotFoundPage from './components/error/NotFoundPage'
 import { AuthContextProvider } from './components/auth/context'
 
+function App ({ isInitiallyLogged }) {
+  const [isLogged, setIsLogged] = useState(isInitiallyLogged)
 
-function App({ isInitiallyLogged }) {
-    const [isLogged, setIsLogged] = useState(isInitiallyLogged);
+  const handleLogin = () => {
+    setIsLogged(true)
+  }
 
-    const handleLogin = () => {
-        setIsLogged(true);
-    };
+  const handleLogout = () => {
+    setIsLogged(false)
+  }
 
-    const handleLogout = () => {
-        setIsLogged(false);
-    };
-  
-    return (
-        
-            
+  return (
+
         <div className="App">
             <AuthContextProvider value={{ isLogged, handleLogin, handleLogout }}>
                 <div className='m-0 w-full h-full block'>
@@ -37,7 +35,7 @@ function App({ isInitiallyLogged }) {
 
                                 <Route index element={<Hero />} />
                                 <Route path="/adverts" element={<ExplorePage />} />
-                                    <Route path="/adverts/:id" element={<NftId2 />} />
+                                    <Route path="/adverts/:id" element={<NftId />} />
                                     <Route path="/adverts/new" element={
                                         <RequireAuth>
                                             <CreatePage />
@@ -63,9 +61,8 @@ function App({ isInitiallyLogged }) {
                 </div>
             </AuthContextProvider>
         </div>
-            
-        
-    );
+
+  )
 }
 
-export default App;
+export default App

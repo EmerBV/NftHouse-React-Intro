@@ -1,18 +1,18 @@
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 import EthLogo from '../../assets/eth.svg'
 
 import { BsFillCartFill } from 'react-icons/bs'
 
 const style = {
-  eventItem: `flex px-4 py-5 font-medium`,
-  event: `flex items-center`,
-  eventIcon: `mr-2 text-xl`,
-  eventName: `text-lg font-semibold`,
-  eventPrice: `flex items-center`,
-  eventPriceValue: `text-lg`,
-  ethLogo: `h-5 mr-2`,
-  accent: `text-[#2081e2]`,
+  eventItem: 'flex px-4 py-5 font-medium',
+  event: 'flex items-center',
+  eventIcon: 'mr-2 text-xl',
+  eventName: 'text-lg font-semibold',
+  eventPrice: 'flex items-center',
+  eventPriceValue: 'text-lg',
+  ethLogo: 'h-5 mr-2',
+  accent: 'text-[#2081e2]'
 }
 
 const EventItem = ({ event }) => {
@@ -30,7 +30,7 @@ const EventItem = ({ event }) => {
       </div>
       <div className={`${style.accent} flex-[3]`}>{event.name}</div>
       <div className={`${style.accent} flex-[3]`}>{event.name}</div>
-      <time className={`${style.accent} flex-[2]`} 
+      <time className={`${style.accent} flex-[2]`}
             dateTime={event.createdAt}>
             {formatDistanceToNow(new Date(event.createdAt))}
       </time>
