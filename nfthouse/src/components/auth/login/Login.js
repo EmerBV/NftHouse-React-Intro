@@ -5,13 +5,13 @@ import {
   useMemo,
   useRef,
   useState,
-} from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+} from "react"
+import { useLocation, useNavigate, Link } from "react-router-dom"
 
-import Header from "../../header/Header";
-import Footer from "../../footer/Footer";
-import { login } from "../service";
-import AuthContext from "../context";
+import Header from "../../header/Header"
+import Footer from "../../footer/Footer"
+import { login } from "../service"
+import AuthContext from "../context"
 
 const style = {
   signinWrapper:
@@ -28,25 +28,25 @@ const style = {
   loginBtn:
     "border border-[#282b2f] bg-[#2081e2] p-[0.3rem] my-4 text-xl font-semibold rounded-lg text-white w-[250px]",
   questionContainer: "flex justify-center items-center",
-};
+}
 function Login() {
-  const ref = useRef(null);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const ref = useRef(null)
+  const navigate = useNavigate()
+  const location = useLocation()
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
     remember: false,
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const { handleLogin: onLogin } = useContext(AuthContext);
+  })
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const { handleLogin: onLogin } = useContext(AuthContext)
 
   useEffect(() => {
-    ref.current.focus();
-  }, []);
+    ref.current.focus()
+  }, [])
 
-  const { email, password, remember } = credentials;
+  const { email, password, remember } = credentials
 
   const handleChange = useCallback((event) => {
     setCredentials((credentials) => ({
@@ -55,30 +55,30 @@ function Login() {
         event.target.type === "checkbox"
           ? event.target.checked
           : event.target.value,
-    }));
-  }, []);
+    }))
+  }, [])
 
-  const resetError = () => setError(null);
+  const resetError = () => setError(null)
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     try {
-      resetError();
-      setIsLoading(true);
-      await login(credentials);
-      setIsLoading(false);
-      onLogin();
-      const from = location.state?.from?.pathname || "/";
-      navigate(from, { replace: true });
+      resetError()
+      setIsLoading(true)
+      await login(credentials)
+      setIsLoading(false)
+      onLogin()
+      const from = location.state?.from?.pathname || "/"
+      navigate(from, { replace: true })
     } catch (error) {
-      setError(error);
-      setIsLoading(false);
+      setError(error)
+      setIsLoading(false)
     }
-  };
+  }
 
   const buttonDisabled = useMemo(() => {
-    return !email || !password || isLoading;
-  }, [email, password, isLoading]);
+    return !email || !password || isLoading
+  }, [email, password, isLoading])
 
   return (
     <div>
@@ -152,7 +152,7 @@ function Login() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

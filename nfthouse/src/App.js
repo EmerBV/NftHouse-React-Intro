@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React, { useState } from "react"
+import { Routes, Route, Navigate } from "react-router-dom"
 
-import Login from "./components/auth/login/Login";
-import RequireAuth from "./components/auth/RequireAuth";
-import Signup from "./components/signup/Signup";
-import Hero from "./components/hero/Hero";
-import ExplorePage from "./components/explore/ExplorePage";
-import AccountPage from "./components/account/AccountPage";
-import NftId from "./components/nfts/NftId";
-import CreatePage from "./components/create/CreatePage";
-import NotFoundPage from "./components/error/NotFoundPage";
-import { AuthContextProvider } from "./components/auth/context";
+import Login from "./components/auth/login/Login"
+import RequireAuth from "./components/auth/RequireAuth"
+import Signup from "./components/signup/Signup"
+import Hero from "./components/hero/Hero"
+import ExplorePage from "./components/explore/ExplorePage"
+import AccountPage from "./components/account/AccountPage"
+import NftId from "./components/nfts/NftId"
+import CreatePage from "./components/create/CreatePage"
+import NotFoundPage from "./components/error/NotFoundPage"
+import { AuthContextProvider } from "./components/auth/context"
 
 function App({ isInitiallyLogged }) {
-  const [isLogged, setIsLogged] = useState(isInitiallyLogged);
+  const [isLogged, setIsLogged] = useState(isInitiallyLogged)
 
   const handleLogin = () => {
-    setIsLogged(true);
-  };
+    setIsLogged(true)
+  }
 
   const handleLogout = () => {
-    setIsLogged(false);
-  };
+    setIsLogged(false)
+  }
 
   return (
     <div className="App">
@@ -63,7 +63,7 @@ function App({ isInitiallyLogged }) {
         </div>
       </AuthContextProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

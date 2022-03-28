@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react"
+import { useNavigate, useParams } from "react-router-dom"
 
-import Header from "../header/Header";
+import Header from "../header/Header"
 
-import { getAdvert } from "./service";
+import { getAdvert } from "./service"
 
-import NFTImage from "../nft/NFTImage";
-import NftDetails from "../nft/NftDetails";
-import ItemActivity from "../nft/ItemActivity";
-import Purchase from "../common/Purchase";
+import NFTImage from "../nft/NFTImage"
+import NftDetails from "../nft/NftDetails"
+import ItemActivity from "../nft/ItemActivity"
+import Purchase from "../common/Purchase"
 
 const style = {
   nftIdwrapper: "w-full pt-[8px] pb-[16px] block container-lg text-[#e5e8eb]",
@@ -29,20 +29,20 @@ const style = {
   bottomContainer: "overflow-auto w-full block",
   activityWrapper: "block",
   activityContainer: "overflow-hidden block",
-};
+}
 
 const NftId2 = () => {
-  const [advert, setAdvert] = useState(null);
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const [advert, setAdvert] = useState(null)
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     getAdvert(id)
       .then((advert) => setAdvert(advert))
       .catch(() => {
-        navigate("/404");
-      });
-  }, [id, navigate]);
+        navigate("/404")
+      })
+  }, [id, navigate])
 
   return (
     <div>
@@ -87,7 +87,7 @@ const NftId2 = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NftId2;
+export default NftId2

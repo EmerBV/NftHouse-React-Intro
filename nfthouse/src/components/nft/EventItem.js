@@ -1,8 +1,8 @@
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import formatDistanceToNow from "date-fns/formatDistanceToNow"
 
-import EthLogo from "../../assets/eth.svg";
+import EthLogo from "../../assets/eth.svg"
 
-import { BsFillCartFill } from "react-icons/bs";
+import { BsFillCartFill } from "react-icons/bs"
 
 const style = {
   eventItem: "flex px-4 py-5 font-medium",
@@ -13,7 +13,7 @@ const style = {
   eventPriceValue: "text-lg",
   ethLogo: "h-5 mr-2",
   accent: "text-[#2081e2]",
-};
+}
 
 const EventItem = ({ event }) => {
   return (
@@ -34,7 +34,7 @@ const EventItem = ({ event }) => {
         {formatDistanceToNow(new Date(event.createdAt))}
       </time>
     </div>
-  );
-};
+  )
+}
 
-export default EventItem;
+export default EventItem

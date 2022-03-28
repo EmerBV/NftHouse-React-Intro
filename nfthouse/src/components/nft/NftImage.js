@@ -1,7 +1,7 @@
-import EthLogo from "../../assets/eth.svg";
-import NftImg from "../../assets/1.png";
+import EthLogo from "../../assets/eth.svg"
+import NftImg from "../../assets/1.png"
 
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai"
 
 const style = {
   nftWrapper:
@@ -15,7 +15,7 @@ const style = {
     "md:text-2xl text-lg items-center hover:text-red-500 cursor-pointer mr-2",
   likeText: "md:text-xl text-lg",
   nftImg: "w-full",
-};
+}
 
 const NFTImage = ({ photo }) => {
   return (
@@ -33,7 +33,7 @@ const NFTImage = ({ photo }) => {
         <img className={style.nftImg} src={photo || NftImg} alt="" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NFTImage;
+export default NFTImage

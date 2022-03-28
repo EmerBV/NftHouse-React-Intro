@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState } from "react"
+import { Link, NavLink } from "react-router-dom"
 
-import LoginButton from "../auth/LoginButton";
+import LoginButton from "../auth/LoginButton"
 
-import Logo from "../../assets/nftHouse-brand.png";
+import Logo from "../../assets/nftHouse-brand.png"
 
-import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { CgProfile } from "react-icons/cg";
+import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
+import { CgProfile } from "react-icons/cg"
 
 const style = {
   navWrapper:
@@ -30,10 +30,10 @@ const style = {
     "text-[38px] font-extrabold text-white absolute right-8 top-7 cursor-pointer md:hidden items-center text-center",
   itemsContainer:
     "md:flex items-center absolute md:static bg-[#262626] left-0 w-full md:px-0 px-10",
-};
+}
 
 function Header() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <nav className={style.navWrapper}>
@@ -100,7 +100,7 @@ function Header() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
-export default Header;
+export default Header

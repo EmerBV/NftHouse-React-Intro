@@ -1,14 +1,14 @@
-import Page from "../layout/Page";
+import Page from "../layout/Page"
 
-import Header from "../header/Header";
-import BannerImg from "../../assets/banner.jpg";
-import ProfileImg from "../../assets/azuki_logo_2.jpg";
-import EthLogo from "../../assets/eth.svg";
+import Header from "../header/Header"
+import BannerImg from "../../assets/banner.jpg"
+import ProfileImg from "../../assets/azuki_logo_2.jpg"
+import EthLogo from "../../assets/eth.svg"
 
-import { CgWebsite } from "react-icons/cg";
-import { FaDiscord } from "react-icons/fa";
-import { AiOutlineTwitter } from "react-icons/ai";
-import { HiDotsVertical } from "react-icons/hi";
+import { CgWebsite } from "react-icons/cg"
+import { FaDiscord } from "react-icons/fa"
+import { AiOutlineTwitter } from "react-icons/ai"
+import { HiDotsVertical } from "react-icons/hi"
 
 const style = {
   collectionWrapper: "overflow-hidden min-w-[600px] py-0 block",
@@ -43,7 +43,7 @@ const style = {
     "text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4 text-center mx-3",
   nftCardWrapper:
     "grid 2xl:grid-cols-9 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mx-0 items-center justify-center py-8 overflow-hidden min-w-[600px] px-[28px] block",
-};
+}
 
 const AccountPage = () => {
   return (
@@ -133,7 +133,7 @@ const AccountPage = () => {
         <div className={style.nftCardWrapper}>{/* <NftCard /> */}</div>
       </div>
     </Page>
-  );
-};
+  )
+}
 
-export default AccountPage;
+export default AccountPage

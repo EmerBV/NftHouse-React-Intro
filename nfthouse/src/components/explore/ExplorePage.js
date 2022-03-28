@@ -1,29 +1,31 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react"
+import { useParams, useNavigate } from "react-router-dom"
 
-import Header from "../header/Header";
-import Page from "../layout/Page";
-import { getAdverts } from "../nfts/service";
-import NftCard from "../nft/NftCard";
+import Header from "../header/Header"
+import Page from "../layout/Page"
+import { getAdverts } from "../nfts/service"
+import NftCard from "../nft/NftCard"
 
 const style = {
   collectionWrapper: "overflow-hidden py-0 px-[28px] block",
   nftCardWrapper:
     "grid 2xl:grid-cols-9 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mx-0 items-center justify-center py-8",
-};
+  collectionContainer:
+    "lg:flex md:block block flex-wrap bg-[#202225] w-full justify-between items-center mt-[24px] mb-[10px] mx-0",
+}
 
 const ExplorePage = () => {
-  const [adverts, setAdverts] = useState([]);
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const [adverts, setAdverts] = useState([])
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     getAdverts(id)
       .then((advert) => setAdverts(advert))
       .catch(() => {
-        navigate("/404");
-      });
-  }, [id, navigate]);
+        navigate("/404")
+      })
+  }, [id, navigate])
 
   return (
     <Page>
@@ -77,7 +79,7 @@ const ExplorePage = () => {
         ) : null}
       </div>
     </Page>
-  );
-};
+  )
+}
 
-export default ExplorePage;
+export default ExplorePage

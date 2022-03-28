@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
-import { HiTag } from "react-icons/hi";
-import { IoMdWallet } from "react-icons/io";
+import { HiTag } from "react-icons/hi"
+import { IoMdWallet } from "react-icons/io"
 
 const style = {
   purchaseWrapper:
@@ -9,7 +9,7 @@ const style = {
   button: "mr-8 flex items-center py-2 px-12 rounded-lg cursor-pointer",
   buttonIcon: "text-xl",
   buttonText: "ml-2 text-lg font-semibold",
-};
+}
 
 const Purchase = () => {
   return (
@@ -28,7 +28,7 @@ const Purchase = () => {
         <div className={style.buttonText}>Make Offer</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Purchase;
+export default Purchase

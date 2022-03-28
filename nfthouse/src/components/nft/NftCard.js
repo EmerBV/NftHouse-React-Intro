@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
-import NftImg from "../../assets/1.png";
-import EthLogo from "../../assets/eth.svg";
+import NftImg from "../../assets/1.png"
+import EthLogo from "../../assets/eth.svg"
 
-import { BiHeart } from "react-icons/bi";
+import { BiHeart } from "react-icons/bi"
 
 const style = {
   nftWrapper:
@@ -23,10 +23,10 @@ const style = {
   likes:
     "text-[#8a939b] md:font-bold font-semibold flex items-center w-full justify-end mt-3 hover:text-red-500 cursor-pointer mr-2",
   likeIcon: "md:text-xl text-lg items-center justify-center",
-};
+}
 
 const NftCard = ({ id, name, photo, likes, price }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <div className={style.nftWrapper}>
@@ -35,7 +35,7 @@ const NftCard = ({ id, name, photo, likes, price }) => {
         onClick={() => {
           navigate({
             pathname: `/adverts/${id}`,
-          });
+          })
         }}
       >
         <img className={style.nftImg} src={photo || NftImg} alt="" />
@@ -63,7 +63,7 @@ const NftCard = ({ id, name, photo, likes, price }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NftCard;
+export default NftCard

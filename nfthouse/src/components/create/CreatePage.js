@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
-import { createAdvert, getTags } from "../nfts/service";
-import Page from "../layout/Page";
-import Header from "../header/Header";
+import { createAdvert, getTags } from "../nfts/service"
+import Page from "../layout/Page"
+import Header from "../header/Header"
 
-import { IoMdWallet } from "react-icons/io";
+import { IoMdWallet } from "react-icons/io"
 
 const style = {
   createWrapper: "h-screen overflow-hidden",
@@ -31,73 +31,70 @@ const style = {
     "border border-[#282b2f] bg-[#2081e2] flex items-center py-2 px-12 text-xl font-semibold rounded-lg text-white",
   wallet: "text-xl",
   create: "ml-2 text-lg font-semibold",
-};
+}
 
 const CreatePage = () => {
-  const navigate = useNavigate();
-  const [name, setName] = useState(null);
-  const [categorySelector, setCategorySelector] = useState(null);
-  const [eventSelector, setEventSelector] = useState(null);
-  const [tags, setTags] = useState([]);
-  const [price, setPrice] = useState(null);
-  const [inputFile, setInputFile] = useState(null);
+  const navigate = useNavigate()
+  const [name, setName] = useState(null)
+  const [categorySelector, setCategorySelector] = useState(null)
+  const [eventSelector, setEventSelector] = useState(null)
+  const [tags, setTags] = useState([])
+  const [price, setPrice] = useState(null)
+  const [inputFile, setInputFile] = useState(null)
 
   useEffect(() => {
-    getTags().then((tags) => setTags(tags));
-  }, []);
+    getTags().then((tags) => setTags(tags))
+  }, [])
 
   const handleInputName = (e) => {
-    setName(e.target.value);
-  };
+    setName(e.target.value)
+  }
 
   const handleEventSelector = (e) => {
-    const valueEventSelector = Boolean(
-      e.target.value,
-      (option) => option.value
-    );
-    setEventSelector(valueEventSelector);
-  };
+    const valueEventSelector = Boolean(e.target.value, (option) => option.value)
+    setEventSelector(valueEventSelector)
+  }
 
   const handleCategorySelector = (e) => {
     const valueCategorySelector = Array.from(
       e.target.selectedOptions,
       (option) => option.value
-    );
-    setCategorySelector(valueCategorySelector);
-  };
+    )
+    setCategorySelector(valueCategorySelector)
+  }
 
   const handleInputNumber = (e) => {
     if (e.target.value > 1000) {
-      e.target.value = 1000;
+      e.target.value = 1000
     }
     if (e.target.value < 0) {
-      e.target.value = 0;
+      e.target.value = 0
     }
-    setPrice(e.target.value);
-  };
+    setPrice(e.target.value)
+  }
 
   const handleInputfile = (e) => {
-    setInputFile(e.target.files[0]);
-  };
+    setInputFile(e.target.files[0])
+  }
 
   const advertFormData = () => {
-    const advertFormData = new FormData();
-    advertFormData.append("name", name);
-    advertFormData.append("sale", eventSelector);
-    advertFormData.append("price", price);
-    advertFormData.append("tags", categorySelector);
-    if (inputFile) advertFormData.append("photo", inputFile);
-    return advertFormData;
-  };
+    const advertFormData = new FormData()
+    advertFormData.append("name", name)
+    advertFormData.append("sale", eventSelector)
+    advertFormData.append("price", price)
+    advertFormData.append("tags", categorySelector)
+    if (inputFile) advertFormData.append("photo", inputFile)
+    return advertFormData
+  }
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     createAdvert(advertFormData()).then((advertResp) => {
-      const advert = advertResp;
-      navigate(`/adverts/${advert.id}`);
-    });
-  };
+      const advert = advertResp
+      navigate(`/adverts/${advert.id}`)
+    })
+  }
 
   return (
     <Page>
@@ -211,7 +208,7 @@ const CreatePage = () => {
         </div>
       </div>
     </Page>
-  );
-};
+  )
+}
 
-export default CreatePage;
+export default CreatePage

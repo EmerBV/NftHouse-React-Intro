@@ -1,9 +1,9 @@
-import { CgArrowsExchangeV } from "react-icons/cg";
-import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
-import { useState, useEffect } from "react";
+import { CgArrowsExchangeV } from "react-icons/cg"
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai"
+import { useState, useEffect } from "react"
 
-import { getAdverts } from "../nfts/service";
-import EventItem from "./EventItem";
+import { getAdverts } from "../nfts/service"
+import EventItem from "./EventItem"
 
 const style = {
   wrapper:
@@ -20,20 +20,20 @@ const style = {
   eventItem: "flex px-4",
   ethLogo: "h-5 mr-2",
   accent: "text-[#2081e2]",
-};
+}
 
 const ItemActivity = () => {
-  const [adverts, setAdverts] = useState([]);
+  const [adverts, setAdverts] = useState([])
 
   useEffect(() => {
-    query();
-  }, []);
+    query()
+  }, [])
 
   const query = () => {
-    getAdverts().then((adverts) => setAdverts(adverts));
-  };
+    getAdverts().then((adverts) => setAdverts(adverts))
+  }
 
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(true)
   return (
     <div className={style.wrapper}>
       <div className={style.title} onClick={() => setToggle(!toggle)}>
@@ -70,7 +70,7 @@ const ItemActivity = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ItemActivity;
+export default ItemActivity

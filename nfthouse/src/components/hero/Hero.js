@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-import Page from "../layout/Page";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import CardImg from "../../assets/card_Img.jpg";
+import Page from "../layout/Page"
+import Header from "../../components/header/Header"
+import Footer from "../../components/footer/Footer"
+import CardImg from "../../assets/card_Img.jpg"
 
-import { AiOutlineInfoCircle } from "react-icons/ai";
+import { AiOutlineInfoCircle } from "react-icons/ai"
 
 const style = {
   wrapper: "w-full min-h-full flex flex-col",
@@ -32,7 +32,7 @@ const style = {
   nameText: "text-[#1868b7]",
   infoIcon:
     "flex justify-end items-center flex-1 text-[#8a939b] hover:text-white text-2xl font-bold cursor-pointer",
-};
+}
 
 const Hero = () => {
   return (
@@ -81,7 +81,7 @@ const Hero = () => {
         <Footer />
       </div>
     </Page>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

@@ -1,11 +1,11 @@
-import "../../index.css";
+import "../../index.css"
 
 import {
   AiOutlineTwitter,
   AiFillInstagram,
   AiFillYoutube,
-} from "react-icons/ai";
-import { FaDiscord } from "react-icons/fa";
+} from "react-icons/ai"
+import { FaDiscord } from "react-icons/fa"
 
 const style = {
   footerContainer:
@@ -18,7 +18,7 @@ const style = {
   listItem: "text-white hover:text-[#42a0ff] cursor-pointer px-[1.2rem]",
   copyrightContainer: "flex justify-center pb-4",
   copyright: "text-[#8a939b] text-center block",
-};
+}
 
 const Footer = () => {
   return (
@@ -76,7 +76,7 @@ const Footer = () => {
         </p>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import Header from "../header/Header"
+import Footer from "../footer/Footer"
 
 const style = {
   signupWrapper:
@@ -17,7 +17,7 @@ const style = {
   buttonContainer: "flex justify-center items-center",
   submitButton:
     "border border-[#282b2f] bg-[#2081e2] hover:bg-[#42a0ff] p-[0.3rem] my-4 text-xl font-semibold rounded-lg cursor-pointer text-white w-[250px]",
-};
+}
 
 const Signup = () => {
   return (
@@ -82,7 +82,7 @@ const Signup = () => {
 
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup
